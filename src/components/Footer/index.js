@@ -5,7 +5,7 @@ import GetCorrectSvg from '../../utils/hoc/GetCorrectSvg';
 const Footer = () => {
 
     return (
-        <div className="flex flex-col items-center mt-36">
+        <div role="contentinfo" className="flex flex-col items-center mt-36">
             <span className="text-base md:text-lg xl:text-xl dark:text-white-emphasis tracking-widest">
                 Built With
             </span>
