@@ -24,6 +24,29 @@ const SEO = ({ title, description, image, article }) => {
         url: `${siteUrl}${pathname}`,
     };
 
+    const jsonLdWebsite = {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "Daimler Clavel • Web Developer",
+        "author": {
+            "@type": "Person",
+            "@id": "#daimlerclavel"
+        },
+        "description": "Daimler Clavel is a front-end web developer who loves building stuff for the web. He has also worked as a CRO practitioner and Data Implementation Analyst.",
+        "image": "",
+        "url": "https://daimlerclavel.dev",
+        "keywords": "Daimler, Clavel, Daimler Clavel Portfolio, front end web developer, data analyst, cro practitioner, dmclavel, developer portfolio"
+    };
+
+    const jsonLdAuthor = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "#daimlerclavel",
+        "name": "Daimler Clavel",
+        "email": "demclavel@gmail.com",
+        "url": "https://daimlerclavel.dev"
+    };
+
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta name="description" content={seo.description} />
@@ -45,27 +68,10 @@ const SEO = ({ title, description, image, article }) => {
             )}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
             <script type="application/ld+json">
-                {`
-                    {
-                        "@context": "https://schema.org",
-                        "@type": "WebPage",
-                        "@id": "",
-                        "url": "https://daimlerclavel.dev",
-                        "name": "Daimler Clavel",
-                        "mainEntity": {
-                            "@type": "CreativeWork",
-                            "@id": "",
-                            "name": "Daimler Clavel",
-                            "founder": {
-                                "@type": "Person",
-                                "@id": "#me",
-                                "givenName": "Daimler",
-                                "familyName": "Clavel",
-                                "gender": "Male",
-                            }
-                        }
-                    }
-                `}
+                {JSON.stringify(jsonLdWebsite)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(jsonLdAuthor)}
             </script>
         </Helmet>  
     );

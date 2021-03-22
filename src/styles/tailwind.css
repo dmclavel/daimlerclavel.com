@@ -42,6 +42,50 @@
         opacity: 1;
     }
 
+    #menu-slider.open {
+        width: 75vw !important;
+        opacity: 1 !important;
+        z-index: 10 !important;
+    }
+
+    #burger-menu-open.close {
+        /* animation: blm-rotate-close 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards; */
+        transition-delay: 0ms !important;
+        transform: rotate(0deg) !important;
+    }
+
+    #burger-menu-open.open {
+        /* animation: blm-rotate-open 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 300ms; */
+        transition-delay: 150ms;
+        transform: rotate(45deg);
+    }
+
+    #burger-menu-open.open .bml-1 {
+        animation: blm-adjust-1 150ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    }
+
+    #burger-menu-open.close .bml-1 {
+        animation: blm-adjust-1-close 150ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 150ms;
+    }
+
+    #burger-menu-open.open .bml-2 {
+        opacity: 0;
+    }
+
+    #burger-menu-open.close .bml-2 {
+        animation: blm-adjust-2 150ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 150ms;
+    }
+
+    #burger-menu-open.open .bml-3 {
+        width: 2.5rem;
+        animation: blm-adjust-3 150ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+    }
+
+    #burger-menu-open.close .bml-3 {
+        width: 1.5rem;
+        animation: blm-adjust-3-close 150ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 150ms;
+    }
+
     #accounts-block .social-block svg {
         transition: all 0.3s linear, 0.5s;
         opacity: 0;
@@ -67,6 +111,51 @@
     .social-block svg:hover {
         fill: #1190CB;
         transform: translate(0px, -3px) !important;
+    }
+
+    @keyframes blm-rotate-open {
+        to {
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes blm-rotate-close {
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes blm-adjust-1 {
+        50% {
+            transform: translateY(0.75rem);
+        }
+        100% {
+            transform: rotate(90deg) translateX(12px);
+        }
+    }
+    
+    @keyframes blm-adjust-1-close {
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes blm-adjust-2 {
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blm-adjust-3 {
+        to {
+            transform: translateY(-0.75rem);
+        }
+    }
+
+    @keyframes blm-adjust-3-close {
+        to {
+            transform: rotate(0deg);
+        }
     }
 
     @keyframes slide-right {
