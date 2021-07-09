@@ -146,8 +146,8 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
                     role="none"
                     onKeyPress={() => {}}
                     onClick={handleBurgerMenuClick}
-                    style={{ backdropFilter: 'blur(2px)', width: '25vw', zIndex: 1 }} 
-                    className="ease-linear duration-150 delay-150 fixed top-0 left-0 h-full" 
+                    style={{ width: '25vw', zIndex: 1 }} 
+                    className="ease-linear duration-150 delay-150 fixed top-0 left-0 h-full backdrop-blur" 
                 />
             )}
             <div id="menu-slider" className="flex lg:hidden flex-col justify-center items-center ease-in-out duration-300 delay-150 fixed w-0 h-screen right-0 top-0 bg-gray-100 dark:bg-blue-dark opacity-0 -z-1">
