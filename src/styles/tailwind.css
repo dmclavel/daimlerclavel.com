@@ -33,6 +33,11 @@
         fill: #1190CB !important;
     }
 
+    .backdrop-blur {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
     .filter-project-box-light:hover {
         filter: drop-shadow(2px 2px 4px #1190CB);
     }
