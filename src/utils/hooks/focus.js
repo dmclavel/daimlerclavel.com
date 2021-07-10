@@ -13,12 +13,11 @@ const useFocusEvents = (querySelectorString) => {
 
   useEffect(() => {
     const element = document.querySelector(querySelectorString);
-    
+
     if (element !== null) {
       element.addEventListener('focus', onElementFocus);
       element.addEventListener('focusout', onElementFocusOut);
     }
-    
 
     // Clean ups, remove event listeners on unmount
     return () => {

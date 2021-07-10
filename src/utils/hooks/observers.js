@@ -45,8 +45,7 @@ const useResizeObserver = (type, elementNode = document.body) => {
     }
 
     return () => {
-      if (windowEventListener)
-        window.removeEventListener('resize', windowEventListener);
+      if (windowEventListener) window.removeEventListener('resize', windowEventListener);
       if (elementResizeObserver) elementResizeObserver.disconnect();
     };
   }, [type, elementNode]);

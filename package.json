@@ -35,6 +35,9 @@
     "prettier": "^2.3.2",
     "tailwindcss-pseudo-elements": "^1.5.1"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run format"
