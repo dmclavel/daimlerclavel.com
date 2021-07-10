@@ -1,7 +1,7 @@
 import React from 'react';
 
-import useScrollAnimate from '../utils/hooks/useScrollAnimate';
-import useThemes from '../utils/hooks/useThemes';
+import useScrollAnimate from '../utils/hooks/scrollAnimation';
+import useThemes from '../utils/hooks/themes';
 
 import NavigationBar from '../components/NavigationBar';
 import HeroSection from '../components/HeroSection';
@@ -11,7 +11,7 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
-const Home = () => { 
+const Home = () => {
     useScrollAnimate();
     const [theme, isMounted, toggleThemeState] = useThemes();  
     // const processedTheme = theme === 'dark' ? 'dark' : 'light';

@@ -28,10 +28,9 @@ const HeroSection = () => {
                 CRO Practitioner
             </p>
             <div style={{ width: 'fit-content', animationDelay: isBreakpoint ? '1000ms' : '1700ms' }} className="inline-block relative mt-10 opacity-0 animate-up cursor-pointer">
-                {/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */}
-                <p onKeyPress={() => {}} onClick={handleClick} className="transition ease-linear duration-300 text-blue dark:text-mint-light dark:hover:text-mint-dark text-lg">
+                <button onClick={handleClick} className="transition ease-linear duration-300 text-blue dark:text-mint-light dark:hover:text-mint-dark text-lg">
                     Contact Me
-                </p>
+                </button>
                 <div style={{ animationDelay: isBreakpoint ? '1300ms' : '2000ms' }} className="absolute -bottom-1 left-0 h-0.5 bg-blue dark:bg-mint-light animate-block-width-interpolate" />
             </div>
         </div>

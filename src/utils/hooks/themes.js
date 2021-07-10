@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import useResizeObserver from './observers';
 
 const useThemes = () => {
     const [theme, setTheme] = useState('');
     const [isMounted, setIsMounted] = useState(false);
+    const [windowWidth, windowHeight] = useResizeObserver('window');
 
     const toggleThemeState = () => {
         setTheme(prevState => {
@@ -63,7 +65,7 @@ const useThemes = () => {
         } catch (_e) {
            
         }
-    }, [theme]);
+    }, [theme, windowWidth, windowHeight]);
 
     return [theme, isMounted, toggleThemeState];
 };

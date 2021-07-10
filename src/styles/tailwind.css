@@ -38,13 +38,15 @@
         -webkit-backdrop-filter: blur(2px);
     }
 
+    .force-project-box-hover-effect,
     .filter-project-box-light:hover {
         filter: drop-shadow(2px 2px 4px #1190CB);
     }
 
+    .force-tooltips-transform,
     div[id^=project-box]:hover .svg-tooltips {
         transform: translate(0, 0);
-        opacity: 1;
+        opacity: 1 !important;
     }
 
     #menu-slider.open {
@@ -109,11 +111,12 @@
         fill: rgba(0,0,0,0.87);
     }
 
+    .filter-project-box a:focus svg,
     .filter-project-box svg:hover {
         fill: #1190CB;
     }
 
-    .social-block svg:hover {
+    .social-block div a svg:hover {
         fill: #1190CB;
         transform: translate(0px, -3px) !important;
     }
@@ -179,15 +182,17 @@
             fill: rgba(255,255,255,0.87);
         }
         
-        .filter-project-box svg:hover {
+        .filter-project-box svg:hover,
+        .filter-project-box a:focus svg {
             fill: #31ffce;
         }
 
+        .force-project-box-hover-effect,
         .filter-project-box:hover {
             filter: drop-shadow(2px 2px 4px #31FFCE);
         }
 
-        html.dark .social-block svg:hover {
+        .social-block div a svg:hover {
             fill: #31ffce;
             transform: translate(0px, -3px) !important;
         }

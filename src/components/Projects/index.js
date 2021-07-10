@@ -22,39 +22,8 @@ const Projects = () => {
                     content={(
                         <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
                             This is the first version of my portfolio which I made way back 2019. 
-                            I integrated a lot of pre-made libraries in this portfolio like{' '}
-                            <Link 
-                                url="https://github.com/mattboldt/typed.js/" 
-                                title="Typed.js" 
-                                style={{
-                                    fontSize: '0.8rem',
-                                    lineHeight: '1rem',
-                                }}
-                            />,{' '}
-                            <Link 
-                                url="https://owlcarousel2.github.io/OwlCarousel2/" 
-                                title="Owl Carousel" 
-                                style={{
-                                    fontSize: '0.8rem',
-                                    lineHeight: '1rem',
-                                }}
-                            />,{' '}
-                            <Link 
-                                url="https://github.com/rendro/easy-pie-chart" 
-                                title="Easy Pie Chat" 
-                                style={{
-                                    fontSize: '0.8rem',
-                                    lineHeight: '1rem',
-                                }}
-                            />,{' '}
-                            <Link 
-                                url="https://getbootstrap.com/" 
-                                title="Bootstrap" 
-                                style={{
-                                    fontSize: '0.8rem',
-                                    lineHeight: '1rem',
-                                }}
-                            />. Find out how I leverage these existing libraries in
+                            I integrated a lot of pre-made libraries in this portfolio like Typed.js, Owl Carousel,
+                            Easy Pie Chart and Bootstrap. Find out how I leverage these existing libraries in
                             my portfolio.
                         </span>
                     )}

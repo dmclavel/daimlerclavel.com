@@ -1,14 +1,16 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import useMediaQuery from '../../utils/hooks/mediaQuery';
 
 import CoolLogo from '../CoolLogo';
 import SunSvg from '../../svgs/sun.svg';
 import MoonSvg from '../../svgs/moon.svg';
 
 const NavigationBar = ({ theme, toggleThemeState }) => {
-    const isBreakpoint =  (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) < 1024;
+    // const isBreakpoint =  (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) < 1024;
     const [menuOpened, setMenuOpened] = useState(false);
     const [burgerMenuClass, setBurgerMenuClass] = useState('flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0');
+    const burgerMenuBreakPoint = useMediaQuery('(max-width: 1024px)');
 
     useEffect(() => {
         if (menuOpened) {
@@ -96,10 +98,15 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
             <div
                 id="dark-mode-slider"
                 role="switch"
+                aria-label="theme-switcher"
                 aria-checked={theme === 'dark'}
                 tabIndex={0}
                 onClick={toggleThemeState}
-                onKeyPress={() => {}}
+                onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                        toggleThemeState();
+                    }
+                }}
                 className="relative flex items-center rounded-2xl bg-blue-light dark:bg-mint-light w-16 h-8 cursor-pointer"
             >
                 <div 
@@ -112,7 +119,7 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
     );
 
     return (
-        <div id="navigation-bar" className="flex items-center font-serif">
+        <header id="navigation-bar" className="flex items-center font-serif">
             <div className="flex w-1/2 lg:w-1/4 start-slide-right opacity-0">
                 <CoolLogo />
             </div>
@@ -139,7 +146,7 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
                 </div>
             </div>
             <div style={{ animationDelay: '1000ms' }} className="hidden lg:flex w-1/2 lg:w-1/4 justify-end items-center start-slide-right opacity-0">
-                {!isBreakpoint && darkThemeSliderCmp}
+                {!burgerMenuBreakPoint.matches && darkThemeSliderCmp}
             </div>
             {menuOpened && (
                 <div
@@ -151,14 +158,14 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
                 />
             )}
             <div id="menu-slider" className="flex lg:hidden flex-col justify-center items-center ease-in-out duration-300 delay-150 fixed w-0 h-screen right-0 top-0 bg-gray-100 dark:bg-blue-dark opacity-0 -z-1">
-                {isBreakpoint && (
+                {burgerMenuBreakPoint.matches && (
                     <div className="flex items-center">
                         {darkThemeSliderCmp}
                     </div>
                 )}
                 {navLinksCmp(true)}
             </div>
-        </div>
+        </header>
     )
 };
 

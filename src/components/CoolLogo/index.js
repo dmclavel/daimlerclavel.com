@@ -21,11 +21,9 @@ const CoolLogo = () => {
         }
     };
 
-    /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
     return (
-        <div
-            role="img"
-            onKeyPress={() => {}}
+        <button
+            tabIndex={-1}
             onClick={handleClick}
             onMouseOverCapture={handleHover}
             onMouseOutCapture={handleMouseOut}
@@ -35,7 +33,7 @@ const CoolLogo = () => {
             <span className="font-sans font-bold text-lg text-blue-light dark:text-mint-light">
                 D
             </span>
-        </div>
+        </button>
     );
 };
 
