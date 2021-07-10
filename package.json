@@ -29,6 +29,12 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
     "tailwindcss-pseudo-elements": "^1.5.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
