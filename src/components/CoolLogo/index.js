@@ -23,6 +23,7 @@ const CoolLogo = () => {
 
   return (
     <button
+        test-index="test"
       tabIndex={-1}
       onClick={handleClick}
       onMouseOverCapture={handleHover}
