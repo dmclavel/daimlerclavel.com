@@ -14,27 +14,27 @@ import DevJobSvg from '../../svgs/developer.svg';
 
 const Timeline = ({ theme }) => {
   return (
-    <div className='mt-40 lg:mt-52'>
-      <div id='timeline' />
+    <div className="mt-40 lg:mt-52">
+      <div id="timeline" />
       <div
-        id='timeline-heading-block'
-        className='flex justify-center items-center mb-16 opacity-0'
+        id="timeline-heading-block"
+        className="flex justify-center items-center mb-16 opacity-0"
       >
-        <div className='w-12 lg:w-40 mr-2 h-0.5 bg-blue-light dark:bg-mint-light' />
-        <p className='text-center text-black dark:text-white-emphasis text-xl lg:text-2xl'>
+        <div className="w-12 lg:w-40 mr-2 h-0.5 bg-blue-light dark:bg-mint-light" />
+        <p className="text-center text-black dark:text-white-emphasis text-xl lg:text-2xl">
           Personal Timeline
         </p>
-        <div className='w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light' />
+        <div className="w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light" />
       </div>
       <TimelineBox
-        boxId='timeline-box-1'
-        position='left'
+        boxId="timeline-box-1"
+        position="left"
         content={`
                    Graduated with a degree in Bachelor of Science in Computer Science at one of the top universities in the Philippines.
                 `}
-        date='2015-2020'
+        date="2015-2020"
         headerLink={
-          <Link url='https://uplb.edu.ph/main/' title='University of the Philippines' />
+          <Link url="https://uplb.edu.ph/main/" title="University of the Philippines" />
         }
         svgComponent={
           <CollegeSvg
@@ -45,12 +45,12 @@ const Timeline = ({ theme }) => {
         }
       />
       <TimelineBox
-        boxId='timeline-box-2'
-        position='right'
+        boxId="timeline-box-2"
+        position="right"
         content={`
                     Some time after I learned JavaScript, I started learning React.js somewhere this year. I decided to take a course on Udemy so I have a well-organized reference on what to learn first.
                 `}
-        date='2017'
+        date="2017"
         svgComponent={
           <LearningSvg
             className={`w-36 h-36 md:w-42 md:h-42${
@@ -60,13 +60,13 @@ const Timeline = ({ theme }) => {
         }
       />
       <TimelineBox
-        boxId='timeline-box-3'
-        position='left'
+        boxId="timeline-box-3"
+        position="left"
         content={`
                     I started my OJT at Questronix Corporation as a Web Developer. I implemented their given UI design into front-end code using Vue and Bootstrap Vue.
                 `}
-        date='June - August 2018'
-        jobTitle='IT Intern'
+        date="June - August 2018"
+        jobTitle="IT Intern"
         svgComponent={
           <TraineeSvg
             className={`w-36 h-36 md:w-42 md:h-42${
@@ -75,17 +75,17 @@ const Timeline = ({ theme }) => {
           />
         }
         headerLink={
-          <Link url='https://questronix.com.ph/' title='Questronix Corporation' />
+          <Link url="https://questronix.com.ph/" title="Questronix Corporation" />
         }
         footer={<TechStack stack={['vue', 'bootstrap']} />}
       />
       <TimelineBox
-        boxId='timeline-box-4'
-        position='right'
+        boxId="timeline-box-4"
+        position="right"
         content={`
                     I spent a year building this project since I was also already working so most of the time I was coding full-time during weekends. It is a full-stack language learning web application with English and Italian language support. Its aim is to integrate necessary functionalities (online classroom, chat, live stream, classroom calendar) in language learning in one app so users won't have to switch between apps.
                 `}
-        date='2019 - 2020'
+        date="2019 - 2020"
         svgComponent={
           <ThesisSvg
             className={`w-36 h-36 md:w-42 md:h-42${
@@ -94,11 +94,11 @@ const Timeline = ({ theme }) => {
           />
         }
         headerLink={
-          <Link url='https://questronix.com.ph/' title='Undergraduate Thesis' />
+          <Link url="https://questronix.com.ph/" title="Undergraduate Thesis" />
         }
         footer={
           <>
-            <TechStack techTerminology='Platforms' stack={['netlify', 'digital-ocean']} />
+            <TechStack techTerminology="Platforms" stack={['netlify', 'digital-ocean']} />
             <TechStack
               stack={[
                 'mongodb',
@@ -116,13 +116,13 @@ const Timeline = ({ theme }) => {
         }
       />
       <TimelineBox
-        boxId='timeline-box-5'
-        position='left'
+        boxId="timeline-box-5"
+        position="left"
         content={`
                     I got my first job at Spiralytics, Inc. (Digital Marketing Company) as a Data Implementation Analyst / Web Developer. I've also worked as a CRO practitioner and facilitated usability test interviews, A/B testing, etc. Below are some of the tools and technologies I've used.
                 `}
-        date='August 2019 - August 2020'
-        jobTitle='Data Analyst / Web Developer'
+        date="August 2019 - August 2020"
+        jobTitle="Data Analyst / Web Developer"
         svgComponent={
           <FirstJobSvg
             className={`w-36 h-36 md:w-42 md:h-42${
@@ -130,22 +130,22 @@ const Timeline = ({ theme }) => {
             }`}
           />
         }
-        headerLink={<Link url='https://www.spiralytics.com/' title='Spiralytics, Inc.' />}
+        headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
         footer={
           <>
-            <TechStack techTerminology='Tools' stack={['ga', 'gtm', 'wordpress']} />
+            <TechStack techTerminology="Tools" stack={['ga', 'gtm', 'wordpress']} />
             <TechStack stack={['js', 'python', 'node-js']} />
           </>
         }
       />
       <TimelineBox
-        boxId='timeline-box-6'
-        position='right'
+        boxId="timeline-box-6"
+        position="right"
         content={`
                    Starting September 2020, I accepted the offer to focus on front-end web development to help build the company's own work space web app to drop off Bitrix24 eventually.
                 `}
-        date='September 2020 - Present'
-        jobTitle='Web Developer'
+        date="September 2020 - Present"
+        jobTitle="Web Developer"
         svgComponent={
           <DevJobSvg
             className={`w-36 h-36 md:w-42 md:h-42${
@@ -153,10 +153,10 @@ const Timeline = ({ theme }) => {
             }`}
           />
         }
-        headerLink={<Link url='https://www.spiralytics.com/' title='Spiralytics, Inc.' />}
+        headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
         footer={
           <>
-            <TechStack techTerminology='Tools' stack={['git', 'vsc', 'vagrant']} />
+            <TechStack techTerminology="Tools" stack={['git', 'vsc', 'vagrant']} />
             <TechStack
               stack={[
                 'js',

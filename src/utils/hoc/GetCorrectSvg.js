@@ -51,241 +51,241 @@ const GetCorrectSvg = ({ stackName, overrideClass }) => {
   switch (stackName) {
     case 'vue':
       return (
-        <div title='Vue JS'>
+        <div title="Vue JS">
           <VueSvg className={svgClassName} />
         </div>
       );
     case 'bootstrap':
       return (
-        <div title='Bootstrap Vue'>
+        <div title="Bootstrap Vue">
           <BootstrapSvg className={svgClassName} />
         </div>
       );
     case 'react-js':
       return (
-        <div title='React JS'>
+        <div title="React JS">
           <ReactSvg className={svgClassName} />
         </div>
       );
     case 'antd':
       return (
-        <div title='Ant Design'>
+        <div title="Ant Design">
           <AntdSvg className={svgClassName} />
         </div>
       );
     case 'ga':
       return (
-        <div title='Google Analytics'>
+        <div title="Google Analytics">
           <GASvg className={svgClassName} />
         </div>
       );
     case 'gtm':
       return (
-        <div title='Google Tag Manager'>
+        <div title="Google Tag Manager">
           <GTMSvg className={svgClassName} />
         </div>
       );
     case 'python':
       return (
-        <div title='Python'>
+        <div title="Python">
           <PythonSvg className={svgClassName} />
         </div>
       );
     case 'js':
       return (
-        <div title='Javascript'>
+        <div title="Javascript">
           <JavascriptSvg className={svgClassName} />
         </div>
       );
     case 'css':
       return (
-        <div title='Cascading Style Sheets 3'>
+        <div title="Cascading Style Sheets 3">
           <CSS3Svg className={svgClassName} />
         </div>
       );
     case 'git':
       return (
-        <div title='Git (Version Control System)'>
+        <div title="Git (Version Control System)">
           <GitSvg className={svgClassName} />
         </div>
       );
     case 'vsc':
       return (
-        <div title='Visual Studio Code'>
+        <div title="Visual Studio Code">
           <VSCSvg className={svgClassName} />
         </div>
       );
     case 'vagrant':
       return (
-        <div title='Vagrant'>
+        <div title="Vagrant">
           <VagrantSvg className={svgClassName} />
         </div>
       );
     case 'mongodb':
       return (
-        <div title='Mongo DB'>
+        <div title="Mongo DB">
           <MongoSvg className={svgClassName} />
         </div>
       );
     case 'express':
       return (
-        <div title='Express'>
+        <div title="Express">
           <ExpressSvg className={svgClassName} />
         </div>
       );
     case 'node-js':
       return (
-        <div title='Node JS'>
+        <div title="Node JS">
           <NodeSvg className={svgClassName} />
         </div>
       );
     case 'material-ui':
       return (
-        <div title='Material UI'>
+        <div title="Material UI">
           <MaterialUISvg className={svgClassName} />
         </div>
       );
     case 'gcp':
       return (
-        <div title='Google Cloud'>
+        <div title="Google Cloud">
           <GCPSvg className={svgClassName} />
         </div>
       );
     case 'redux-saga':
       return (
-        <div title='Redux Saga'>
+        <div title="Redux Saga">
           <ReduxSagaSvg className={svgClassName} />
         </div>
       );
     case 'redux':
       return (
-        <div title='Redux'>
+        <div title="Redux">
           <ReduxSvg className={svgClassName} />
         </div>
       );
     case 'aws':
       return (
-        <div title='Amazon Web Services'>
+        <div title="Amazon Web Services">
           <AWSSvg className={svgClassName} />
         </div>
       );
     case 'mysql':
       return (
-        <div title='MySQL'>
+        <div title="MySQL">
           <SQLSvg className={svgClassName} />
         </div>
       );
     case 'bitbucket':
       return (
-        <div title='Bit Bucket'>
+        <div title="Bit Bucket">
           <BitbucketSvg className={svgClassName} />
         </div>
       );
     case 'npm':
       return (
-        <div title='NPM'>
+        <div title="NPM">
           <NPMSvg className={svgClassName} />
         </div>
       );
     case 'webpack':
       return (
-        <div title='Webpack'>
+        <div title="Webpack">
           <WebpackSvg className={svgClassName} />
         </div>
       );
     case 'babel':
       return (
-        <div title='Babel'>
+        <div title="Babel">
           <BabelSvg className={svgClassName} />
         </div>
       );
     case 'django':
       return (
-        <div title='Django'>
+        <div title="Django">
           <DjangoSvg className={svgClassName} />
         </div>
       );
     case 'digital-ocean':
       return (
-        <div title='Digital Ocean'>
+        <div title="Digital Ocean">
           <DOSvg className={svgClassName} />
         </div>
       );
     case 'netlify':
       return (
-        <div title='Netlify'>
+        <div title="Netlify">
           <NetlifySvg className={svgClassName} />
         </div>
       );
     case 'firebase':
       return (
-        <div title='Firebase'>
+        <div title="Firebase">
           <FirebaseSvg className={svgClassName} />
         </div>
       );
     case 'sendgrid':
       return (
-        <div title='Sendgrid'>
+        <div title="Sendgrid">
           <SendgridSvg className={svgClassName} />
         </div>
       );
     case 'cloudflare':
       return (
-        <div title='Cloudflare'>
+        <div title="Cloudflare">
           <CloudflareSvg className={svgClassName} />
         </div>
       );
     case 'codepen':
       return (
-        <div title='Codepen'>
+        <div title="Codepen">
           <CodepenSvg className={svgClassName} />
         </div>
       );
     case 'sentry':
       return (
-        <div title='Sentry'>
+        <div title="Sentry">
           <SentrySvg className={svgClassName} />
         </div>
       );
     case 'jest':
       return (
-        <div title='Jest'>
+        <div title="Jest">
           <JestSvg className={svgClassName} />
         </div>
       );
     case 'mocha':
       return (
-        <div title='Mocha'>
+        <div title="Mocha">
           <MochaSvg className={svgClassName} />
         </div>
       );
     case 'wordpress':
       return (
-        <div title='WordPress'>
+        <div title="WordPress">
           <WordpressSvg className={svgClassName} />
         </div>
       );
     case 'shopify':
       return (
-        <div title='Shopify'>
+        <div title="Shopify">
           <ShopifySvg className={svgClassName} />
         </div>
       );
     case 'surge':
       return (
-        <div title='Surge'>
+        <div title="Surge">
           <SurgeSvg className={svgClassName} />
         </div>
       );
     case 'gatsby':
       return (
-        <div title='Gatsby'>
+        <div title="Gatsby">
           <GatsbySvg className={svgClassName} />
         </div>
       );
     case 'tailwind':
       return (
-        <div title='Tailwind CSS'>
+        <div title="Tailwind CSS">
           <TailwindSvg className={svgClassName} />
         </div>
       );

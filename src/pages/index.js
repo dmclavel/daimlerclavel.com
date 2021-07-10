@@ -19,12 +19,12 @@ const Home = () => {
   return (
     <>
       <SEO />
-      <div className='fixed transition ease-linear duration-300 top-0 w-full h-full bg-transparent dark:bg-royal -z-1' />
-      <div id='main-block' className='m-8 md:m-14 lg:m-20 font-serif'>
+      <div className="fixed transition ease-linear duration-300 top-0 w-full h-full bg-transparent dark:bg-royal -z-1" />
+      <div id="main-block" className="m-8 md:m-14 lg:m-20 font-serif">
         {isMounted && (
           <React.Fragment>
             <NavigationBar theme={theme} toggleThemeState={toggleThemeState} />
-            <div className='lg:mx-8 xl:mx-44 2xl:mx-60'>
+            <div className="lg:mx-8 xl:mx-44 2xl:mx-60">
               <HeroSection />
               <Timeline theme={theme} />
               <Projects />

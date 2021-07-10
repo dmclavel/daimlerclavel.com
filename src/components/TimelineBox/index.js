@@ -12,34 +12,34 @@ const TimelineBox = ({
   footer,
 }) => {
   const timelineBox = (
-    <div className='flex flex-col bg-gray-100 dark:bg-blue-dark p-4 w-full lg:w-5/12 rounded-sm shadow'>
-      <div className='flex justify-center'>{svgComponent}</div>
-      <span className='text-center text-base text-black-semi dark:text-white tracking-wider mb-2'>
+    <div className="flex flex-col bg-gray-100 dark:bg-blue-dark p-4 w-full lg:w-5/12 rounded-sm shadow">
+      <div className="flex justify-center">{svgComponent}</div>
+      <span className="text-center text-base text-black-semi dark:text-white tracking-wider mb-2">
         {date}
       </span>
       {jobTitle && (
-        <span className='text-base text-blue dark:text-mint-light tracking-wider'>
+        <span className="text-base text-blue dark:text-mint-light tracking-wider">
           {jobTitle}
         </span>
       )}
       {headerLink}
-      <span className='font-sans text-sm text-black dark:text-white-semi tracking-wide'>
+      <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
         {content}
       </span>
       {footer}
     </div>
   );
   const middleLine = (
-    <div className='relative hidden justify-center items-center lg:flex w-2/12'>
-      <hr className='bg-gray-300 dark:bg-white-emphasis w-1 h-full' />
-      <div className='absolute rounded-full w-4 h-4 bg-blue dark:bg-mint-light' />
+    <div className="relative hidden justify-center items-center lg:flex w-2/12">
+      <hr className="bg-gray-300 dark:bg-white-emphasis w-1 h-full" />
+      <div className="absolute rounded-full w-4 h-4 bg-blue dark:bg-mint-light" />
     </div>
   );
-  const emptyItem = <div className='hidden lg:flex w-full lg:w-5/12' />;
+  const emptyItem = <div className="hidden lg:flex w-full lg:w-5/12" />;
 
   return (
     <>
-      <div id={boxId} className='flex mb-4 lg:mb-0 opacity-0'>
+      <div id={boxId} className="flex mb-4 lg:mb-0 opacity-0">
         {position === 'left' ? timelineBox : emptyItem}
         {middleLine}
         {position === 'right' ? timelineBox : emptyItem}

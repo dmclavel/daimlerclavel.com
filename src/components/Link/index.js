@@ -10,9 +10,9 @@ const Link = ({ url, title, style }) => (
       width: 'fit-content',
       ...style,
     }}
-    target='_blank'
-    rel='noopener noreferrer'
-    className='inline text-blue dark:text-mint mb-2'
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline text-blue dark:text-mint mb-2"
   >
     {title}
   </a>

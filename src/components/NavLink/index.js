@@ -6,7 +6,7 @@ const NavLink = ({ scrollToId, children, style }) => {
     <a
       href={scrollToId}
       style={style}
-      className='font-serif text-base xl:text-xl dark:text-mint tracking-widest'
+      className="font-serif text-base xl:text-xl dark:text-mint tracking-widest"
     >
       {children}
     </a>
