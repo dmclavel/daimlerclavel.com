@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
 
@@ -7,7 +7,6 @@ import SunSvg from '../../svgs/sun.svg';
 import MoonSvg from '../../svgs/moon.svg';
 
 const NavigationBar = ({ theme, toggleThemeState }) => {
-  // const isBreakpoint =  (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) < 1024;
   const [menuOpened, setMenuOpened] = useState(false);
   const [burgerMenuClass, setBurgerMenuClass] = useState(
     'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
@@ -96,30 +95,48 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
     );
   };
 
-  const darkThemeSliderCmp = (
-    <Fragment>
-      <SunSvg alt="light" id="sun-light" className="mr-2 w-7 h-7" />
-      <div
-        id="dark-mode-slider"
-        role="switch"
-        aria-label="theme-switcher"
-        aria-checked={theme === 'dark'}
-        tabIndex={0}
-        onClick={toggleThemeState}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter') {
-            toggleThemeState();
-          }
-        }}
-        className="relative flex items-center rounded-2xl bg-blue-light dark:bg-mint-light w-16 h-8 cursor-pointer"
-      >
-        <div
-          id="dark-mode-circle"
-          className="absolute ml-0.5 w-7 h-7 bg-white-emphasis rounded-full"
+  const darkThemeSliderCmp = useMemo(
+    () => (
+      <Fragment>
+        <SunSvg
+          alt="light"
+          id="sun-light"
+          className={`mr-2 w-7 h-7 ${
+            theme === 'dark' ? 'svg-sun-dark' : 'svg-sun-light'
+          }`}
         />
-      </div>
-      <MoonSvg alt="dark" id="moon-dark" className="ml-2 w-6 h-6" />
-    </Fragment>
+        <div
+          id="dark-mode-slider"
+          role="switch"
+          aria-label="theme-switcher"
+          aria-checked={theme === 'dark'}
+          tabIndex={0}
+          onClick={toggleThemeState}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              toggleThemeState();
+            }
+          }}
+          className="relative flex items-center rounded-2xl bg-blue-light dark:bg-mint-light w-16 h-8 cursor-pointer"
+        >
+          <div
+            id="dark-mode-circle"
+            className={`
+            absolute ml-0.5 w-7 h-7 bg-white-emphasis rounded-full
+            ${theme === 'dark' ? 'animate-slider-right' : 'animate-slider-left'}
+          `}
+          />
+        </div>
+        <MoonSvg
+          alt="dark"
+          id="moon-dark"
+          className={`ml-2 w-6 h-6 ${
+            theme === 'dark' ? 'svg-moon-dark' : 'svg-moon-light'
+          }`}
+        />
+      </Fragment>
+    ),
+    [theme, toggleThemeState]
   );
 
   return (
@@ -131,11 +148,20 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
         {navLinksCmp()}
       </div>
       <div id="outer-burger-menu" className={burgerMenuClass}>
+        <span id="burger-menu-description" className="opacity-0 absolute -z-1">
+          This will open a sidebar with different navigation links to the site.
+        </span>
         <div
+          aria-label="burger-menu"
+          aria-describedby="burger-menu-description"
           role="menu"
           className="cursor-pointer"
           tabIndex={0}
-          onKeyPress={() => {}}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              handleBurgerMenuClick();
+            }
+          }}
           onClick={handleBurgerMenuClick}
         >
           <div id="burger-menu-open" className="transition ease-linear duration-300">
@@ -161,7 +187,7 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
           onKeyPress={() => {}}
           onClick={handleBurgerMenuClick}
           style={{ width: '25vw', zIndex: 1 }}
-          className="ease-linear duration-150 delay-150 fixed top-0 left-0 h-full backdrop-blur"
+          className="fixed top-0 left-0 h-full backdrop-blur"
         />
       )}
       <div
