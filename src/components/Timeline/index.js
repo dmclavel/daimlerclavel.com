@@ -22,32 +22,32 @@ const Timeline = ({ theme }) => {
   const buildingVectorProps = {
     'aria-label': 'graduation',
     'aria-describedby': 'graduation-vector',
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const learningVectorProps = {
     'aria-label': 'learning',
-    'aria-describedby': 'learning-vector',  
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    'aria-describedby': 'learning-vector',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const internVectorProps = {
     'aria-label': 'training',
     'aria-describedby': 'training-vector',
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const thesisVectorProps = {
     'aria-label': 'focusing',
     'aria-describedby': 'focusing-vector',
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const firstJobVectorProps = {
     'aria-label': 'achievement',
     'aria-describedby': 'achievement-vector',
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const devJobVectorProps = {
     'aria-label': 'working',
     'aria-describedby': 'working-vector',
-    'className': 'w-36 h-36 md:w-42 md:h-42',
+    className: 'w-36 h-36 md:w-42 md:h-42',
   };
 
   return (
@@ -94,7 +94,11 @@ const Timeline = ({ theme }) => {
           <Link url="https://uplb.edu.ph/main/" title="University of the Philippines" />
         }
         svgComponent={
-          theme === 'light' ? <BuildingLightSvg {...buildingVectorProps} /> : <BuildingDarkSvg {...buildingVectorProps} />
+          theme === 'light' ? (
+            <BuildingLightSvg {...buildingVectorProps} />
+          ) : (
+            <BuildingDarkSvg {...buildingVectorProps} />
+          )
         }
       />
       <TimelineBox
@@ -105,7 +109,11 @@ const Timeline = ({ theme }) => {
                 `}
         date="2017"
         svgComponent={
-          theme === 'light' ? <LearningLightSvg {...learningVectorProps} /> : <LearningDarkSvg {...learningVectorProps} />
+          theme === 'light' ? (
+            <LearningLightSvg {...learningVectorProps} />
+          ) : (
+            <LearningDarkSvg {...learningVectorProps} />
+          )
         }
       />
       <TimelineBox
@@ -117,7 +125,11 @@ const Timeline = ({ theme }) => {
         date="June - August 2018"
         jobTitle="IT Intern"
         svgComponent={
-          theme === 'light' ? <WorkingLightSvg {...internVectorProps} /> : <WorkingDarkSvg {...internVectorProps} />
+          theme === 'light' ? (
+            <WorkingLightSvg {...internVectorProps} />
+          ) : (
+            <WorkingDarkSvg {...internVectorProps} />
+          )
         }
         headerLink={
           <Link url="https://questronix.com.ph/" title="Questronix Corporation" />
@@ -132,7 +144,11 @@ const Timeline = ({ theme }) => {
                 `}
         date="2019 - 2020"
         svgComponent={
-          theme === 'light' ? <WorldLightSvg {...thesisVectorProps} /> : <WorldDarkSvg {...thesisVectorProps} />
+          theme === 'light' ? (
+            <WorldLightSvg {...thesisVectorProps} />
+          ) : (
+            <WorldDarkSvg {...thesisVectorProps} />
+          )
         }
         headerLink={
           <Link url="https://questronix.com.ph/" title="Undergraduate Thesis" />
@@ -165,7 +181,11 @@ const Timeline = ({ theme }) => {
         date="August 2019 - August 2020"
         jobTitle="Data Analyst / Web Developer"
         svgComponent={
-          theme === 'light' ? <InterviewLightSvg {...firstJobVectorProps} /> : <InterviewDarkSvg {...firstJobVectorProps} />
+          theme === 'light' ? (
+            <InterviewLightSvg {...firstJobVectorProps} />
+          ) : (
+            <InterviewDarkSvg {...firstJobVectorProps} />
+          )
         }
         headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
         footer={
@@ -184,7 +204,11 @@ const Timeline = ({ theme }) => {
         date="September 2020 - Present"
         jobTitle="Web Developer"
         svgComponent={
-          theme === 'light' ? <DevJobLightSvg {...devJobVectorProps} /> : <DevJobDarkSvg {...devJobVectorProps} />
+          theme === 'light' ? (
+            <DevJobLightSvg {...devJobVectorProps} />
+          ) : (
+            <DevJobDarkSvg {...devJobVectorProps} />
+          )
         }
         headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
         footer={

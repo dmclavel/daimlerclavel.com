@@ -45,7 +45,7 @@
 
   .svg-tooltips a:hover svg,
   .svg-tooltips a:focus svg {
-      fill: #12805c;
+    fill: #12805c;
   }
 
   .force-tooltips-transform,
@@ -123,28 +123,28 @@
   }
 
   html.dark .fill-white {
-        fill: #fff;
-    }
+    fill: #fff;
+  }
 
   html.dark .svg-tooltips a:hover svg,
   html.dark .svg-tooltips a:focus svg {
-      fill: #31FFCE;
+    fill: #31ffce;
   }
-  
+
   html.dark .filter-project-box svg,
-    html.dark .social-block svg {
-      fill: rgba(255, 255, 255, 0.87);
-    }
+  html.dark .social-block svg {
+    fill: rgba(255, 255, 255, 0.87);
+  }
 
-    html.dark .filter-project-box svg:hover,
-    html.dark .filter-project-box a:focus svg {
-      fill: #31ffce;
-    }
+  html.dark .filter-project-box svg:hover,
+  html.dark .filter-project-box a:focus svg {
+    fill: #31ffce;
+  }
 
-    html.dark .force-project-box-hover-effect,
-    html.dark .filter-project-box:hover {
-      filter: drop-shadow(2px 2px 4px #31ffce);
-    }
+  html.dark .force-project-box-hover-effect,
+  html.dark .filter-project-box:hover {
+    filter: drop-shadow(2px 2px 4px #31ffce);
+  }
 
   .social-block a:hover svg,
   .social-block a:focus svg,

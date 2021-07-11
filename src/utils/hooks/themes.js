@@ -19,10 +19,10 @@ const useThemes = () => {
     const localStrgTheme = window.localStorage.getItem('global-theme');
 
     if (localStrgTheme === null) {
-        setTheme(
-            window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        );
-        return;
+      setTheme(
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      );
+      return;
     }
 
     if (localStrgTheme === 'light') {
