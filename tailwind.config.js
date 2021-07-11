@@ -63,6 +63,16 @@ module.exports = {
         DEFAULT: '#1190CB',
         dark: '#112240',
       },
+      green: {
+        light: '#2d9d78',
+        DEFAULT: '#12805c',
+        dark: '#107154',
+      },
+      orange: {
+        light: '#e68619',
+        DEFAULT: '#cb6f10',
+        dark: '#bd640d',
+      },
       fuchsia: {
         light: '#FDA7DF',
         DEFAULT: '#FC427B',
@@ -76,7 +86,6 @@ module.exports = {
       royal: {
         light: '#303E68',
         DEFAULT: '#202945',
-        dark: '',
       },
     },
     rotate: {

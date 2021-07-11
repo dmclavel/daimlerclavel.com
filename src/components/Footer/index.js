@@ -16,7 +16,8 @@ const Footer = () => {
         <GetCorrectSvg stackName="tailwind" overrideClass="w-6 h-6 lg:w-8 lg:h-8" />
       </div>
       <span className="text-base dark:text-white tracking-wider mt-6">
-        <span className="text-blue dark:text-mint-light">Daimler Clavel</span> &#169; 2021
+        <span className="text-green dark:text-mint-light">Daimler Clavel</span> &#169;
+        2021
       </span>
     </div>
   );

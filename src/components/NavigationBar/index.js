@@ -68,26 +68,26 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
     return (
       <Fragment>
         <div style={{ animationDelay: '200ms' }} className={linkClass}>
-          <span className={'text-blue dark:text-mint-light font-bold'}> 01. </span>
-          <a href="#side-projects" className="text-blue-light dark:text-mint font-medium">
+          <span className={'text-green-dark dark:text-mint-light font-bold'}> 01. </span>
+          <a href="#side-projects" className="text-green dark:text-mint font-medium">
             Projects
           </a>
         </div>
         <div style={{ animationDelay: '400ms' }} className={linkClass}>
-          <span className={'text-blue dark:text-mint-light font-bold'}> 02. </span>
-          <a href="#timeline" className="text-blue-light dark:text-mint font-medium">
+          <span className={'text-green-dark dark:text-mint-light font-bold'}> 02. </span>
+          <a href="#timeline" className="text-green dark:text-mint font-medium">
             Dev Timeline
           </a>
         </div>
         <div style={{ animationDelay: '600ms' }} className={linkClass}>
-          <span className={'text-blue dark:text-mint-light font-bold'}> 03. </span>
-          <a href="#contact-me" className="text-blue-light dark:text-mint font-medium">
+          <span className={'text-green-dark dark:text-mint-light font-bold'}> 03. </span>
+          <a href="#contact-me" className="text-green dark:text-mint font-medium">
             Contact
           </a>
         </div>
         <div style={{ animationDelay: '800ms' }} className={linkClass}>
-          <span className={'text-blue dark:text-mint-light font-bold'}> 04. </span>
-          <a href="#side-projects" className="text-blue-light dark:text-mint font-medium">
+          <span className={'text-green-dark dark:text-mint-light font-bold'}> 04. </span>
+          <a href="#side-projects" className="text-green dark:text-mint font-medium">
             Resume
           </a>
         </div>
@@ -117,7 +117,7 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
               toggleThemeState();
             }
           }}
-          className="relative flex items-center rounded-2xl bg-blue-light dark:bg-mint-light w-16 h-8 cursor-pointer"
+          className="relative flex items-center rounded-2xl bg-green-light dark:bg-mint-light w-16 h-8 cursor-pointer"
         >
           <div
             id="dark-mode-circle"
@@ -165,12 +165,12 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
           onClick={handleBurgerMenuClick}
         >
           <div id="burger-menu-open" className="transition ease-linear duration-300">
-            <div className="bg-blue dark:bg-mint w-10 h-0.5 rounded-sm bml-1" />
+            <div className="bg-green dark:bg-mint w-10 h-0.5 rounded-sm bml-1" />
             <div className="flex justify-end w-10 my-2.5">
-              <div className="bg-blue dark:bg-mint w-8 h-0.5 rounded-sm bml-2" />
+              <div className="bg-green dark:bg-mint w-8 h-0.5 rounded-sm bml-2" />
             </div>
             <div className="flex justify-end w-10">
-              <div className="bg-blue dark:bg-mint w-6 h-0.5 rounded-sm bml-3" />
+              <div className="bg-green dark:bg-mint w-6 h-0.5 rounded-sm bml-3" />
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@
     font-size: clamp(24px, 4vw, 40px);
   }
   .svg-light-mode {
-    fill: #1190cb !important;
+    fill: #12805c !important;
   }
 
   .backdrop-blur {
@@ -40,7 +40,12 @@
 
   .force-project-box-hover-effect,
   .filter-project-box-light:hover {
-    filter: drop-shadow(2px 2px 4px #1190cb);
+    filter: drop-shadow(2px 2px 4px #12805c);
+  }
+
+  .svg-tooltips a:hover svg,
+  .svg-tooltips a:focus svg {
+      fill: #12805c;
   }
 
   .force-tooltips-transform,
@@ -117,9 +122,45 @@
     fill: #1190cb;
   }
 
-  .social-block div a svg:hover {
-    fill: #1190cb;
+  html.dark .fill-white {
+        fill: #fff;
+    }
+
+  html.dark .svg-tooltips a:hover svg,
+  html.dark .svg-tooltips a:focus svg {
+      fill: #31FFCE;
+  }
+  
+  html.dark .filter-project-box svg,
+    html.dark .social-block svg {
+      fill: rgba(255, 255, 255, 0.87);
+    }
+
+    html.dark .filter-project-box svg:hover,
+    html.dark .filter-project-box a:focus svg {
+      fill: #31ffce;
+    }
+
+    html.dark .force-project-box-hover-effect,
+    html.dark .filter-project-box:hover {
+      filter: drop-shadow(2px 2px 4px #31ffce);
+    }
+
+  .social-block a:hover svg,
+  .social-block a:focus svg,
+  html.dark .social-block a:hover svg,
+  html.dark .social-block a:focus svg {
     transform: translate(0px, -3px) !important;
+  }
+
+  .social-block a:hover svg,
+  .social-block a:focus svg {
+    fill: #12805c;
+  }
+
+  html.dark .social-block a:hover svg,
+  html.dark .social-block a:focus svg {
+    fill: #31ffce;
   }
 
   @keyframes blm-rotate-open {
@@ -174,28 +215,6 @@
     100% {
       opacity: 1;
       transform: translateX(0);
-    }
-  }
-
-  @variants dark {
-    .filter-project-box svg,
-    html.dark .social-block svg {
-      fill: rgba(255, 255, 255, 0.87);
-    }
-
-    .filter-project-box svg:hover,
-    .filter-project-box a:focus svg {
-      fill: #31ffce;
-    }
-
-    .force-project-box-hover-effect,
-    .filter-project-box:hover {
-      filter: drop-shadow(2px 2px 4px #31ffce);
-    }
-
-    .social-block div a svg:hover {
-      fill: #31ffce;
-      transform: translate(0px, -3px) !important;
     }
   }
 

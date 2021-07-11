@@ -9,11 +9,11 @@ const Projects = () => {
         id="side-projects"
         className="flex justify-center items-center opacity-0 mt-16 lg:mt-32 mb-12"
       >
-        <div className="w-12 lg:w-40 mr-2 h-0.5 bg-blue-light dark:bg-mint-light" />
+        <div className="w-12 lg:w-40 mr-2 h-0.5 bg-green-light dark:bg-mint-light" />
         <p className="text-center dark:text-white-emphasis text-xl lg:text-2xl">
           My Side Projects
         </p>
-        <div className="w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light" />
+        <div className="w-12 lg:w-40 ml-2 h-0.5 bg-green-light dark:bg-mint-light" />
       </div>
       <div className="flex flex-wrap justify-evenly justify-center">
         <ProjectBox

@@ -14,11 +14,11 @@ const ContactSection = () => {
         id="contact-heading-block"
         className="flex justify-center items-center mt-16 lg:mt-32 mb-16 opacity-0"
       >
-        <div className="w-12 lg:w-40 mr-2 h-0.5 bg-blue-light dark:bg-mint-light" />
+        <div className="w-12 lg:w-40 mr-2 h-0.5 bg-green-light dark:bg-mint-light" />
         <p className="text-center dark:text-white-emphasis text-lg md:text-xl xl:text-2xl">
           Work & Social Accounts
         </p>
-        <div className="w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light" />
+        <div className="w-12 lg:w-40 ml-2 h-0.5 bg-green-light dark:bg-mint-light" />
       </div>
       <div id="accounts-block" className="flex flex-col items-center">
         <div className="text-center w-3/4 lg:w-1/2">

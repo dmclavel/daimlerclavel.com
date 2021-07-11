@@ -37,7 +37,7 @@ const ProjectBox = ({
       className="opacity-0 relative flex flex-col justify-between filter-project-box-light dark:filter-project-box bg-gray-100 dark:bg-blue-dark p-4 rounded-sm shadow-mint project-box mt-4"
     >
       <header className="flex flex-col">
-        <span className="text-base text-blue dark:text-mint-light tracking-wider w-3/4 mb-2">
+        <span className="text-base text-green dark:text-mint-light tracking-wider w-3/4 mb-2">
           {projectTitle}
         </span>
         {typeof content === 'string' ? (
@@ -68,11 +68,9 @@ const ProjectBox = ({
             href={projectRepository}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to the Github repository of this project."
           >
-            <span style={{ opacity: 0 }} className="absolute">
-              Go to the Github repository of this project
-            </span>
-            <GithubSvg className="w-5 h-5 fill-white text-white-emphasis mr-2 cursor-pointer" />
+            <GithubSvg className="w-5 h-5 fill-white mr-2 cursor-pointer" />
           </a>
         </div>
         <div title="Go to the project's website.">
@@ -81,11 +79,9 @@ const ProjectBox = ({
             href={projectLink}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Go to the website of this project."
           >
-            <span style={{ opacity: 0 }} className="absolute">
-              Go to the website of this project
-            </span>
-            <ExternalLinkSvg className="w-5 h-5 fill-white text-white-emphasis cursor-pointer" />
+            <ExternalLinkSvg className="w-5 h-5 fill-white cursor-pointer" />
           </a>
         </div>
       </div>

@@ -30,7 +30,7 @@ const CoolLogo = () => {
       className="relative flex justify-center items-center p-1 w-10 h-10 cursor-pointer"
     >
       <AnimatedBorders hovered={logoHovered} />
-      <span className="font-sans font-bold text-lg text-blue-light dark:text-mint-light">
+      <span className="font-sans font-bold text-lg text-green-dark dark:text-mint-light">
         D
       </span>
     </button>

@@ -18,7 +18,7 @@ const TimelineBox = ({
         {date}
       </span>
       {jobTitle && (
-        <span className="text-base text-blue dark:text-mint-light tracking-wider">
+        <span className="text-base text-green-dark dark:text-mint-light tracking-wider">
           {jobTitle}
         </span>
       )}
@@ -32,7 +32,7 @@ const TimelineBox = ({
   const middleLine = (
     <div className="relative hidden justify-center items-center lg:flex w-2/12">
       <hr className="bg-gray-300 dark:bg-white-emphasis w-1 h-full" />
-      <div className="absolute rounded-full w-4 h-4 bg-blue dark:bg-mint-light" />
+      <div className="absolute rounded-full w-4 h-4 bg-green dark:bg-mint-light" />
     </div>
   );
   const emptyItem = <div className="hidden lg:flex w-full lg:w-5/12" />;

@@ -12,7 +12,7 @@ const Link = ({ url, title, style }) => (
     }}
     target="_blank"
     rel="noopener noreferrer"
-    className="inline text-blue dark:text-mint mb-2"
+    className="inline text-green dark:text-mint mb-2"
   >
     {title}
   </a>

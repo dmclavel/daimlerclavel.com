@@ -11,7 +11,7 @@ const HeroSection = () => {
     <div className="flex flex-col py-16 lg:py-28 xl:py-36 2xl:py-44 2xl:mx-44">
       <p
         style={{ animationDelay: isBreakpoint.matches ? '400ms' : '1300ms' }}
-        className="tracking-wider font-semibold opacity-0 mb-2 lg:mb-0 text-blue dark:text-mint-light animate-up"
+        className="tracking-wider font-semibold opacity-0 mb-2 lg:mb-0 text-green dark:text-mint-light animate-up"
       >
         Hi there! I am
       </p>
@@ -23,7 +23,7 @@ const HeroSection = () => {
       </p>
       <p
         style={{ animationDelay: isBreakpoint.matches ? '600ms' : '1500ms' }}
-        className="mb-4 opacity-0 description-dim text-black-disabled dark:text-white-disabled animate-up"
+        className="mb-4 opacity-0 description-dim text-black-semi dark:text-white-disabled animate-up"
       >
         I love coding web-related stuff.
       </p>
@@ -54,13 +54,13 @@ const HeroSection = () => {
       >
         <button
           onClick={handleClick}
-          className="transition ease-linear duration-300 text-blue dark:text-mint-light dark:hover:text-mint-dark text-lg"
+          className="transition ease-linear duration-300 text-green dark:text-mint-light dark:hover:text-mint-dark text-lg"
         >
           Contact Me
         </button>
         <div
           style={{ animationDelay: isBreakpoint.matches ? '1300ms' : '2000ms' }}
-          className="absolute -bottom-1 left-0 h-0.5 bg-blue dark:bg-mint-light animate-block-width-interpolate"
+          className="absolute -bottom-1 left-0 h-0.5 bg-green dark:bg-mint-light animate-block-width-interpolate"
         />
       </div>
     </div>
