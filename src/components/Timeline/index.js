@@ -27,14 +27,14 @@ const Timeline = ({ theme }) => {
         <div className="w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light" />
       </div>
       <div className="opacity-0 absolute">
-        <div id="graduation-vector">
-          This image shows a diploma and a graduation cap.
-        </div>
+        <div id="graduation-vector">This image shows a diploma and a graduation cap.</div>
         <div id="learning-vector">
-          This image vector shows a person looking at a desktop screen with some code in it.
+          This image vector shows a person looking at a desktop screen with some code in
+          it.
         </div>
         <div id="training-vector">
-          This image vector shows two persons interacting probably conducting an interview.
+          This image vector shows two persons interacting probably conducting an
+          interview.
         </div>
         <div id="focusing-vector">
           This image vector shows a person listening to music.
