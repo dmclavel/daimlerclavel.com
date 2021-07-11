@@ -22,7 +22,7 @@ const ContactSection = () => {
       </div>
       <div id="accounts-block" className="flex flex-col items-center">
         <div className="text-center w-3/4 lg:w-1/2">
-          <span className="font-sans text-sm lg:text-base dark:text-white-semi transition ease-linear duration-300 delay-200 opacity-0">
+          <span className="font-sans text-sm lg:text-base dark:text-white-emphasis transition ease-linear duration-300 delay-200 opacity-0">
             You can contact me on any of my work or social media accounts below. I am
             currently not looking for new opportunities but you can just say hi and let's
             talk about the latest web dev trend or message me if you want to collaborate
@@ -35,6 +35,9 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
               >
+                <span style={{ opacity: 0 }} className="absolute">
+                  My Linkedin Account
+                </span>
                 <LinkedinSvg className="cursor-pointer w-5 h-5 lg:w-7 lg:h-7 mr-3" />
               </a>
             </div>
@@ -44,6 +47,9 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
               >
+                <span style={{ opacity: 0 }} className="absolute">
+                  My Twitter Account
+                </span>
                 <TwitterSvg
                   style={{ animationDelay: '300ms' }}
                   className="cursor-pointer w-5 h-5 lg:w-7 lg:h-7 mr-3"
@@ -52,6 +58,9 @@ const ContactSection = () => {
             </div>
             <div title="Github">
               <a href="https://github.com/dmclavel" target="_blank" rel="noreferrer">
+                <span style={{ opacity: 0 }} className="absolute">
+                  My Github Account
+                </span>
                 <GithubSvg
                   style={{ animationDelay: '600ms' }}
                   className="cursor-pointer w-5 h-5 lg:w-7 lg:h-7 mr-3"
@@ -60,6 +69,9 @@ const ContactSection = () => {
             </div>
             <div title="Codepen">
               <a href="https://codepen.io/dmclavel" target="_blank" rel="noreferrer">
+                <span style={{ opacity: 0 }} className="absolute">
+                  My Codepen Account
+                </span>
                 <CodepenSvg
                   style={{ animationDelay: '900ms' }}
                   className="cursor-pointer w-5 h-5 lg:w-7 lg:h-7 mr-3"
@@ -72,6 +84,9 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
               >
+                <span style={{ opacity: 0 }} className="absolute">
+                  Write me a mail using GMAIL
+                </span>
                 <GmailSvg
                   style={{ animationDelay: '1200ms' }}
                   className="cursor-pointer w-5 h-5 lg:w-7 lg:h-7"

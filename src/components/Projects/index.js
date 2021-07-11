@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ProjectBox from '../ProjectBox';
-import Link from '../Link';
 
 const Projects = () => {
   return (

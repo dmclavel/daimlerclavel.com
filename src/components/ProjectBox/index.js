@@ -29,7 +29,7 @@ const ProjectBox = ({
         projectBoxContainerEl.classList.remove('force-project-box-hover-effect');
       }
     }
-  }, [isWebsiteLinkFocused, isGithubLinkFocused]);
+  }, [isWebsiteLinkFocused, isGithubLinkFocused, boxId]);
 
   return (
     <div
@@ -69,6 +69,9 @@ const ProjectBox = ({
             target="_blank"
             rel="noopener noreferrer"
           >
+            <span style={{ opacity: 0 }} className="absolute">
+                Go to the Github repository of this project
+            </span>
             <GithubSvg className="w-5 h-5 fill-white text-white-emphasis mr-2 cursor-pointer" />
           </a>
         </div>
@@ -79,6 +82,9 @@ const ProjectBox = ({
             target="_blank"
             rel="noopener noreferrer"
           >
+            <span style={{ opacity: 0 }} className="absolute">
+                Go to the website of this project
+            </span>
             <ExternalLinkSvg className="w-5 h-5 fill-white text-white-emphasis cursor-pointer" />
           </a>
         </div>

@@ -26,6 +26,26 @@ const Timeline = ({ theme }) => {
         </p>
         <div className="w-12 lg:w-40 ml-2 h-0.5 bg-blue-light dark:bg-mint-light" />
       </div>
+      <div className="opacity-0 absolute">
+        <div id="graduation-vector">
+          This image shows a diploma and a graduation cap.
+        </div>
+        <div id="learning-vector">
+          This image vector shows a person looking at a desktop screen with some code in it.
+        </div>
+        <div id="training-vector">
+          This image vector shows two persons interacting probably conducting an interview.
+        </div>
+        <div id="focusing-vector">
+          This image vector shows a person listening to music.
+        </div>
+        <div id="achievement-vector">
+          This image vector shows a person on top of a ladder flexing an achievement.
+        </div>
+        <div id="working-vector">
+          This image vector shows a person facing a laptop probably coding.
+        </div>
+      </div>
       <TimelineBox
         boxId="timeline-box-1"
         position="left"
@@ -38,6 +58,8 @@ const Timeline = ({ theme }) => {
         }
         svgComponent={
           <CollegeSvg
+            aria-label="graduation"
+            aria-describedby="graduation-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
@@ -53,6 +75,8 @@ const Timeline = ({ theme }) => {
         date="2017"
         svgComponent={
           <LearningSvg
+            aria-label="learning"
+            aria-describedby="learning-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
@@ -69,6 +93,8 @@ const Timeline = ({ theme }) => {
         jobTitle="IT Intern"
         svgComponent={
           <TraineeSvg
+            aria-label="training"
+            aria-describedby="training-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
@@ -88,6 +114,8 @@ const Timeline = ({ theme }) => {
         date="2019 - 2020"
         svgComponent={
           <ThesisSvg
+            aria-label="focusing"
+            aria-describedby="focusing-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
@@ -125,6 +153,8 @@ const Timeline = ({ theme }) => {
         jobTitle="Data Analyst / Web Developer"
         svgComponent={
           <FirstJobSvg
+            aria-label="achievement"
+            aria-describedby="achievement-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
@@ -148,6 +178,8 @@ const Timeline = ({ theme }) => {
         jobTitle="Web Developer"
         svgComponent={
           <DevJobSvg
+            aria-label="working"
+            aria-describedby="working-vector"
             className={`w-36 h-36 md:w-42 md:h-42${
               theme === 'light' && ' svg-light-mode'
             }`}
