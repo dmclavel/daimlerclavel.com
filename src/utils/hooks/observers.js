@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useResizeObserver = (type, elementNode = document.body) => {
+const useResizeObserver = (type, elementNode) => {
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('');
 
