@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GetCorrectSvg from '../../utils/hoc/GetCorrectSvg';
+import TechSVG from '../TechSVG';
 
 const Footer = () => {
   return (
@@ -9,11 +9,16 @@ const Footer = () => {
         Built With
       </span>
       <div className="flex mt-2">
-        <GetCorrectSvg
+        <TechSVG
           stackName="gatsby"
+          title="Gatsby JS"
           overrideClass="w-6 h-6 lg:w-8 lg:h-8 mr-2 lg:mr-3"
         />
-        <GetCorrectSvg stackName="tailwind" overrideClass="w-6 h-6 lg:w-8 lg:h-8" />
+        <TechSVG
+          stackName="tailwindcss"
+          title="Tailwind CSS"
+          overrideClass="w-6 h-6 lg:w-8 lg:h-8"
+        />
       </div>
       <span className="text-base dark:text-white tracking-wider mt-6">
         <span className="text-green dark:text-mint-light">Daimler Clavel</span> &#169;

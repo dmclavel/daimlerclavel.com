@@ -1,17 +1,18 @@
-import React, { Fragment, useState, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, useState, useEffect, useMemo, useContext } from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
+import { GeneralContext } from '../../pages';
 
 import CoolLogo from '../CoolLogo';
 import SunSvg from '../../svgs/sun.svg';
 import MoonSvg from '../../svgs/moon.svg';
 
-const NavigationBar = ({ theme, toggleThemeState }) => {
+const NavigationBar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [burgerMenuClass, setBurgerMenuClass] = useState(
     'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
   );
   const burgerMenuBreakPoint = useMediaQuery('(max-width: 1024px)');
+  const { theme, toggleThemeState } = useContext(GeneralContext);
 
   useEffect(() => {
     if (menuOpened) {
@@ -201,11 +202,6 @@ const NavigationBar = ({ theme, toggleThemeState }) => {
       </div>
     </header>
   );
-};
-
-NavigationBar.propTypes = {
-  theme: PropTypes.string.isRequired,
-  toggleThemeState: PropTypes.func.isRequired,
 };
 
 export default NavigationBar;

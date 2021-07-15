@@ -1,7 +1,7 @@
-import React from 'react';
-
-import useScrollAnimate from '../utils/hooks/scrollAnimation';
+import React, { createContext, useState, useEffect, useMemo } from 'react';
 import useThemes from '../utils/hooks/themes';
+import useKeyboardShortcuts from '../utils/hooks/shortcuts';
+import useScrollAnimate from '../utils/hooks/scrollAnimation';
 
 import NavigationBar from '../components/NavigationBar';
 import HeroSection from '../components/HeroSection';
@@ -11,25 +11,55 @@ import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
+export const GeneralContext = createContext();
+GeneralContext.displayName = 'Theme, Keyboard Shortcuts | Context';
+
 const Home = () => {
+  const [showIconText, setShowIconText] = useState(false);
+
   useScrollAnimate();
+  const keyboardCombination = useKeyboardShortcuts();
   const [theme, toggleThemeState] = useThemes();
 
+  const contextValue = {
+    theme,
+    showIconText,
+    toggleThemeState,
+    keyboardCombination,
+  };
+
+  useEffect(() => {
+    if (keyboardCombination === 'show-icon-text') {
+      setShowIconText(true);
+    } else if (keyboardCombination === 'show-icon-svg') {
+      setShowIconText(false);
+    }
+  }, [keyboardCombination]);
+
+  /*
+   * Memoize child components below
+   *   > This guarantees that these components do not
+   *   > get re-rendered when the value of the context provider changes.
+   */
+  const heroSectionCmp = useMemo(() => <HeroSection />, []);
+  const projectsCmp = useMemo(() => <Projects />, []);
+  const contactsCmp = useMemo(() => <ContactSection />, []);
+
   return (
-    <>
+    <GeneralContext.Provider value={contextValue}>
       <SEO />
       <div className="fixed transition ease-linear duration-300 top-0 w-full h-full bg-transparent dark:bg-royal -z-1" />
       <div id="main-block" className="m-8 md:m-14 lg:m-20 font-serif">
-        <NavigationBar theme={theme} toggleThemeState={toggleThemeState} />
+        <NavigationBar />
         <div className="lg:mx-8 xl:mx-44 2xl:mx-60">
-          <HeroSection />
-          <Timeline theme={theme} />
-          <Projects />
-          <ContactSection />
+          {heroSectionCmp}
+          <Timeline />
+          {projectsCmp}
+          {contactsCmp}
           <Footer />
         </div>
       </div>
-    </>
+    </GeneralContext.Provider>
   );
 };
 

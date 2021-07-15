@@ -37,7 +37,7 @@ const useResizeObserver = (type, elementNode) => {
 
         try {
           elementResizeObserver.observe(elementNode);
-        } catch (e) {}
+        } catch (_e) {}
         break;
       }
       default:
