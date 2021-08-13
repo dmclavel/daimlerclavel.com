@@ -37,10 +37,10 @@ const Home = () => {
   }, [keyboardCombination]);
 
   /*
-   * Memoize child components below
-   *   > This guarantees that these components do not
-   *   > get re-rendered when the value of the context provider changes.
-   */
+  * Memoize child components below
+  *   > This guarantees that these components do not
+  *   > get re-rendered when the value of the context provider changes.
+  */
   const heroSectionCmp = useMemo(() => <HeroSection />, []);
   const projectsCmp = useMemo(() => <Projects />, []);
   const contactsCmp = useMemo(() => <ContactSection />, []);
@@ -52,7 +52,7 @@ const Home = () => {
       <div id="main-block" className="m-8 md:m-14 lg:m-20 font-serif">
         <NavigationBar />
         <div className="lg:mx-8 xl:mx-44 2xl:mx-60">
-          {heroSectionCmp}
+          {heroSectionCmp} 
           <Timeline />
           {projectsCmp}
           {contactsCmp}
