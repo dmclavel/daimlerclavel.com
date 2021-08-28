@@ -1,8 +1,8 @@
 export default {
-    light: {
-        background: '',
-    },
-    dark: {
-        background: '',
-    }
+  light: {
+    background: '',
+  },
+  dark: {
+    background: '',
+  },
 };

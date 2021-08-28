@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 
@@ -31,10 +31,10 @@ module.exports = {
   },
   darkMode: 'class',
   theme: {
-    fill: theme => ({
-      'red': theme('colors.red.500'),
-      'green': theme('colors.green.500'),
-      'blue': theme('colors.blue.500'),
+    fill: (theme) => ({
+      red: theme('colors.red.500'),
+      green: theme('colors.green.500'),
+      blue: theme('colors.blue.500'),
     }),
     boxShadow: {
       DEFAULT: '0 1px 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px 1px rgba(0, 0, 0, 0.06)',
@@ -63,10 +63,20 @@ module.exports = {
         DEFAULT: '#1190CB',
         dark: '#112240',
       },
+      green: {
+        light: '#2d9d78',
+        DEFAULT: '#12805c',
+        dark: '#107154',
+      },
+      orange: {
+        light: '#e68619',
+        DEFAULT: '#cb6f10',
+        dark: '#bd640d',
+      },
       fuchsia: {
         light: '#FDA7DF',
         DEFAULT: '#FC427B',
-        dark: '#B33771'
+        dark: '#B33771',
       },
       mint: {
         light: '#31FFCE',
@@ -76,7 +86,6 @@ module.exports = {
       royal: {
         light: '#303E68',
         DEFAULT: '#202945',
-        dark: '',
       },
     },
     rotate: {
@@ -84,12 +93,12 @@ module.exports = {
       '-180': '-180deg',
       '-90': '-90deg',
       '-45': '-45deg',
-      '0': '0',
-      '45': '45deg',
-      '90': '90deg',
-      '135': '135deg',
-      '180': '180deg',
-      '270': '270deg',
+      0: '0',
+      45: '45deg',
+      90: '90deg',
+      135: '135deg',
+      180: '180deg',
+      270: '270deg',
     },
     extend: {
       fontFamily: {
@@ -97,15 +106,19 @@ module.exports = {
         sans: ['Karla', ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        'bounce': 'bounce 1s 1.5',
+        bounce: 'bounce 1s 1.5',
         'rotate-back': 'rotate-back 1s forwards',
-        'block-width-interpolate': 'block-width-interpolate 500ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
-        'block-height-interpolate': 'block-height-interpolate 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
-        'block-height-interpolate-delay': 'block-height-interpolate 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) 1s forwards',
+        'block-width-interpolate':
+          'block-width-interpolate 500ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
+        'block-height-interpolate':
+          'block-height-interpolate 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
+        'block-height-interpolate-delay':
+          'block-height-interpolate 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) 1s forwards',
         'slider-left': 'slider-left 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
         'slider-right': 'slider-right 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
-        'up': 'animate-up 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
-        'up-delay-1': 'animate-up 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) 300ms forwards',
+        up: 'animate-up 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards',
+        'up-delay-1':
+          'animate-up 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) 300ms forwards',
         'custom-spin': 'custom-spin 300ms cubic-bezier(0.74, 0.06, 0.4, 0.92) infinite',
       },
       keyframes: {
@@ -113,7 +126,7 @@ module.exports = {
           '0%': {
             transform: 'rotate(45deg)',
           },
-          '100%': { 
+          '100%': {
             transform: 'rotate(0deg)',
           },
         },
@@ -185,7 +198,7 @@ module.exports = {
           },
         },
         ['before']
-      )
+      );
     }),
   ],
-}
+};
