@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { GeneralContext } from '../../pages';
+import GeneralContext from '../../context/general';
 
 /* Returns the correct SVG component */
 const TechSVG = ({ stackName, overrideClass, title }) => {

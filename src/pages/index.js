@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import useThemes from '../utils/hooks/themes';
 import useKeyboardShortcuts from '../utils/hooks/shortcuts';
 import useScrollAnimate from '../utils/hooks/scrollAnimation';
+import GeneralContext from '../context/general';
 
 import NavigationBar from '../components/NavigationBar';
 import HeroSection from '../components/HeroSection';
@@ -10,9 +11,6 @@ import Projects from '../components/Projects';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-
-export const GeneralContext = createContext();
-GeneralContext.displayName = 'Theme, Keyboard Shortcuts | Context';
 
 const Home = () => {
   const [showIconText, setShowIconText] = useState(false);

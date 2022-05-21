@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect, useMemo, useContext } from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
-import { GeneralContext } from '../../pages';
+import GeneralContext from '../../context/general';
 
 import CoolLogo from '../CoolLogo';
 import SunSvg from '../../svgs/sun.svg';
