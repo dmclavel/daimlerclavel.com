@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { GeneralContext } from '../../../pages';
+import GeneralContext from '../../../context/general';
 
 function KeyCombination({ ...rest }) {
   const { showIconText } = useContext(GeneralContext);

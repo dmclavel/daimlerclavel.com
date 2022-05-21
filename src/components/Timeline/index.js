@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GeneralContext } from '../../pages';
+import GeneralContext from '../../context/general';
 
 import TimelineBox from '../TimelineBox';
 import Link from '../Link';
