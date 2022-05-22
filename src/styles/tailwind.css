@@ -123,7 +123,7 @@
   }
 
   html.dark .fill-white {
-    fill: #fff;
+    fill: #fff !important;
   }
 
   html.dark .svg-tooltips a:hover svg,
