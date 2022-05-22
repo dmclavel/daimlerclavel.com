@@ -34,7 +34,7 @@ const ProjectBox = ({
   return (
     <div
       id={boxId}
-      className="opacity-0 relative flex flex-col justify-between filter-project-box-light dark:filter-project-box bg-gray-100 dark:bg-blue-dark p-4 rounded-sm shadow-mint project-box mt-4"
+      className="opacity-0 relative flex flex-col justify-between filter-project-box dark:filter-project-box bg-gray-100 dark:bg-blue-dark p-4 rounded-sm shadow-mint project-box mt-4"
     >
       <header className="flex flex-col">
         <span className="text-base text-green dark:text-mint-light tracking-wider w-3/4 mb-2">
