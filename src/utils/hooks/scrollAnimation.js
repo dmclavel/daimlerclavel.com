@@ -13,6 +13,7 @@ const useScrollAnimate = () => {
       const box4El = document.getElementById('timeline-box-4');
       const box5El = document.getElementById('timeline-box-5');
       const box6El = document.getElementById('timeline-box-6');
+      const box7El = document.getElementById('timeline-box-7');
       const projBox1El = document.getElementById('project-box-1');
       const chBlockEl = document.getElementById('contact-heading-block');
       const accBlockEl = document.getElementById('accounts-block');
@@ -24,6 +25,7 @@ const useScrollAnimate = () => {
       const box4Rect = box4El.getBoundingClientRect();
       const box5Rect = box5El.getBoundingClientRect();
       const box6Rect = box6El.getBoundingClientRect();
+      const box7Rect = box7El.getBoundingClientRect();
       const projBox1Rect = projBox1El.getBoundingClientRect();
       const chBlockRect = chBlockEl.getBoundingClientRect();
       const accBlockRect = accBlockEl.getBoundingClientRect();
@@ -80,6 +82,13 @@ const useScrollAnimate = () => {
         box6Rect.top + scrollTop + box6Rect.height - extraMargin
       ) {
         box6El.classList.add('animate-up-delay-1');
+      }
+
+      if (
+        scrollTop + clientHeight >=
+        box7Rect.top + scrollTop + box7Rect.height - extraMargin
+      ) {
+        box7El.classList.add('animate-up-delay-1');
       }
 
       if (

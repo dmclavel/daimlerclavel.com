@@ -18,6 +18,8 @@ import DevJobDarkSvg from '../../svgs/developer-dark.svg';
 import DevJobLightSvg from '../../svgs/developer-light.svg';
 import InterviewLightSvg from '../../svgs/interview-light.svg';
 import InterviewDarkSvg from '../../svgs/interview-dark.svg';
+import SoftwareEngineerDarkSvg from '../../svgs/software-engineer-dark.svg';
+import SoftwareEngineerLightSvg from '../../svgs/software-engineer-light.svg';
 
 const Timeline = () => {
   const { theme } = useContext(GeneralContext);
@@ -52,6 +54,11 @@ const Timeline = () => {
     'aria-describedby': 'working-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
+  const softEngVectorProps = {
+    'aria-label': 'software engineer',
+    'aria-describedby': 'software-engineer',
+    className: 'w-36 h-36 md:w-42 md:h-42',
+  };
 
   return (
     <div className="mt-40 lg:mt-52">
@@ -83,6 +90,9 @@ const Timeline = () => {
         </div>
         <div id="working-vector">
           This image vector shows a person who is coding on his laptop.
+        </div>
+        <div id="software-engineer">
+          This image vector shows a software engineer.
         </div>
       </div>
       <TimelineBox
@@ -228,10 +238,10 @@ const Timeline = () => {
         boxId="timeline-box-6"
         position="right"
         content={`
-                   Starting July 2020, I accepted the offer to focus on front-end web development to help build the company's own work space web app to drop off Bitrix24 eventually.
+                   Starting July 2020, I accepted the offer to focus on front-end web development to help build the company's own work space web app to drop off Bitrix24 eventually. I am also involved in the development of the company's own analytics tool that integrates our clients' Google Analytics data.
                 `}
-        date="July 2020 - Present"
-        jobTitle="Web Developer"
+        date="July 2020 - August 2021"
+        jobTitle="Front-end Web Developer"
         svgComponent={
           theme === 'light' ? (
             <DevJobLightSvg {...devJobVectorProps} />
@@ -260,6 +270,51 @@ const Timeline = () => {
                 { name: 'ant-design', title: 'Ant Design' },
                 { name: 'python', title: 'Python' },
                 { name: 'mysql', title: 'MySQL' },
+              ]}
+            />
+          </>
+        }
+      />
+      <TimelineBox
+        boxId="timeline-box-7"
+        position="left"
+        content={`
+          I am currently working as a Front-end engineer who develops components for Samsung Vista - a network analysis, visualization and optimization platform. This software provides anomaly detection, root cause analysis and problem solving to minimize the impact from network troubles and service outages.
+        `}
+        date="August 2021 - Present"
+        jobTitle="Front-end Engineer"
+        svgComponent={
+          theme === 'light' ? (
+            <SoftwareEngineerLightSvg {...softEngVectorProps} />
+          ) : (
+            <SoftwareEngineerDarkSvg {...softEngVectorProps} />
+          )
+        }
+        headerLink={
+          <Link url="https://research.samsung.com/srph" title="Samsung Research & Development Insitute" />
+        }
+        footer={
+          <>
+            <Link
+              style={{ margin: '1rem 0 0 0', fontSize: '0.85rem' }}
+              url="https://www.youtube.com/watch?v=63CW27yukck"
+              title="Vista - Zero-touch operation for true automation"
+            />
+            <TechStack
+              techTerminology="Tools"
+              stack={[
+                { name: 'git', title: 'Git' },
+                { name: 'visual-studio-code', title: 'Visual Studio Code' },
+              ]}
+            />
+            <TechStack
+              stack={[
+                { name: 'javascript', title: 'JavaScript' },
+                { name: 'jest', title: 'Jest' },
+                { name: 'css-3', title: 'Cascading Style Sheets 3' },
+                { name: 'react-js', title: 'React JS' },
+                { name: 'redux', title: 'Redux' },
+                { name: 'redux-saga', title: 'Redux Saga' },
               ]}
             />
           </>
