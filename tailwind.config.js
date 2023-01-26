@@ -9,26 +9,10 @@ const zeroWidth = {
 };
 
 module.exports = {
-  purge: {
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
-    options: {
-      safelist: [
-        'mr-0.5',
-        'animate-slider-left',
-        'animate-slider-right',
-        'svg-sun-light',
-        'svg-sun-dark',
-        'svg-moon-light',
-        'svg-moon-dark',
-        'animate-block-width-interpolate',
-        'animate-up-delay-1',
-        'svg-light-mode',
-        'start-animate',
-      ],
-      keyframes: true,
-      fontFace: true,
-    },
-  },
+  content: [
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+  ],
   darkMode: 'class',
   theme: {
     fill: (theme) => ({
