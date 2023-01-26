@@ -10,7 +10,7 @@ import Timeline from '../components/Timeline';
 import Projects from '../components/Projects';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import SearchEngineOp from '../components/SEO';
 
 const Home = () => {
   const [showIconText, setShowIconText] = useState(false);
@@ -45,7 +45,7 @@ const Home = () => {
 
   return (
     <GeneralContext.Provider value={contextValue}>
-      <SEO />
+      <SearchEngineOp />
       <div className="fixed transition ease-linear duration-300 top-0 w-full h-full bg-transparent dark:bg-royal -z-1" />
       <div id="main-block" className="m-8 md:m-14 lg:m-20 font-serif">
         <NavigationBar />
