@@ -1,4 +1,6 @@
-import React, { Fragment, useState, useEffect, useMemo, useContext } from 'react';
+import React, {
+  Fragment, useState, useEffect, useMemo, useContext,
+} from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
 import GeneralContext from '../../context/general';
 
@@ -6,10 +8,10 @@ import CoolLogo from '../CoolLogo';
 import SunSvg from '../../svgs/sun.svg';
 import MoonSvg from '../../svgs/moon.svg';
 
-const NavigationBar = () => {
+function NavigationBar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const [burgerMenuClass, setBurgerMenuClass] = useState(
-    'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
+    'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0',
   );
   const burgerMenuBreakPoint = useMediaQuery('(max-width: 1024px)');
   const { theme, toggleThemeState } = useContext(GeneralContext);
@@ -26,7 +28,7 @@ const NavigationBar = () => {
       setBurgerMenuClass((prev) => [prev, 'fixed', 'z-20'].join(' '));
     } else {
       setBurgerMenuClass(
-        'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
+        'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0',
       );
     }
   }, [menuOpened]);
@@ -67,38 +69,38 @@ const NavigationBar = () => {
     }
 
     return (
-      <Fragment>
+      <>
         <div style={{ animationDelay: '200ms' }} className={linkClass}>
-          <span className={'text-green-dark dark:text-mint-light font-bold'}> 01. </span>
+          <span className="text-green-dark dark:text-mint-light font-bold"> 01. </span>
           <a href="#side-projects" className="text-green dark:text-mint font-medium">
             Projects
           </a>
         </div>
         <div style={{ animationDelay: '400ms' }} className={linkClass}>
-          <span className={'text-green-dark dark:text-mint-light font-bold'}> 02. </span>
+          <span className="text-green-dark dark:text-mint-light font-bold"> 02. </span>
           <a href="#timeline" className="text-green dark:text-mint font-medium">
             Dev Timeline
           </a>
         </div>
         <div style={{ animationDelay: '600ms' }} className={linkClass}>
-          <span className={'text-green-dark dark:text-mint-light font-bold'}> 03. </span>
+          <span className="text-green-dark dark:text-mint-light font-bold"> 03. </span>
           <a href="#contact-me" className="text-green dark:text-mint font-medium">
             Contact
           </a>
         </div>
         <div style={{ animationDelay: '800ms' }} className={linkClass}>
-          <span className={'text-green-dark dark:text-mint-light font-bold'}> 04. </span>
+          <span className="text-green-dark dark:text-mint-light font-bold"> 04. </span>
           <a href="#side-projects" className="text-green dark:text-mint font-medium">
             Resume
           </a>
         </div>
-      </Fragment>
+      </>
     );
   };
 
   const darkThemeSliderCmp = useMemo(
     () => (
-      <Fragment>
+      <>
         <SunSvg
           alt="light"
           id="sun-light"
@@ -135,9 +137,9 @@ const NavigationBar = () => {
             theme === 'dark' ? 'svg-moon-dark' : 'svg-moon-light'
           }`}
         />
-      </Fragment>
+      </>
     ),
-    [theme, toggleThemeState]
+    [theme, toggleThemeState],
   );
 
   return (
@@ -202,6 +204,6 @@ const NavigationBar = () => {
       </div>
     </header>
   );
-};
+}
 
 export default NavigationBar;

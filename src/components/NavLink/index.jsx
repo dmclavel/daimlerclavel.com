@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavLink = ({ scrollToId, children, style }) => {
+function NavLink({ scrollToId, children, style }) {
   return (
     <a
       href={scrollToId}
@@ -11,12 +11,12 @@ const NavLink = ({ scrollToId, children, style }) => {
       {children}
     </a>
   );
-};
+}
 
 NavLink.propTypes = {
   scrollToId: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  style: PropTypes.object,
+  style: PropTypes.shape({}),
 };
 
 NavLink.defaultProps = {

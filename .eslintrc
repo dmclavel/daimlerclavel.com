@@ -1,0 +1,13 @@
+// Gatsby's required rules
+{
+    "extends": ["airbnb", "plugin:jsx-a11y/recommended"],
+    "plugins": ["jsx-a11y"],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/jsx-props-no-spreading": 0
+    }
+  }

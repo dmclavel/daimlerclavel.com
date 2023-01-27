@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import AnimatedBorders from '../AnimatedBorders';
 
-const CoolLogo = () => {
+function CoolLogo() {
   const [logoHovered, setLogoHovered] = useState(false);
 
   const handleClick = () => {
@@ -23,6 +23,7 @@ const CoolLogo = () => {
 
   return (
     <button
+      type="button"
       tabIndex={-1}
       onClick={handleClick}
       onMouseOverCapture={handleHover}
@@ -35,6 +36,6 @@ const CoolLogo = () => {
       </span>
     </button>
   );
-};
+}
 
 export default CoolLogo;

@@ -1,7 +1,8 @@
 import React from 'react';
+import Button from '../Common/Button';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
 
-const HeroSection = () => {
+function HeroSection() {
   const isBreakpoint = useMediaQuery('(max-width: 1024px)');
   const handleClick = () => {
     document.getElementById('contact-heading-block').scrollIntoView();
@@ -52,12 +53,12 @@ const HeroSection = () => {
         }}
         className="inline-block relative mt-10 opacity-0 animate-up cursor-pointer"
       >
-        <button
+        <Button
           onClick={handleClick}
           className="transition ease-linear duration-300 text-green dark:text-mint-light dark:hover:text-mint-dark text-lg"
         >
           Contact Me
-        </button>
+        </Button>
         <div
           style={{ animationDelay: isBreakpoint.matches ? '1300ms' : '2000ms' }}
           className="absolute -bottom-1 left-0 h-0.5 bg-green dark:bg-mint-light animate-block-width-interpolate"
@@ -65,6 +66,6 @@ const HeroSection = () => {
       </div>
     </div>
   );
-};
+}
 
 export default HeroSection;

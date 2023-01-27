@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useScrollAnimate = () => {
   useEffect(() => {
-    const scrollListener = document.addEventListener('scroll', function (e) {
+    const scrollListener = document.addEventListener('scroll', (e) => {
       const { clientHeight, scrollTop } = e.target.scrollingElement;
       const extraMargin = 80;
       const tlBlockEl = document.getElementById('timeline-heading-block');
@@ -32,8 +32,8 @@ const useScrollAnimate = () => {
 
       // scroll positon >= element position
       if (
-        scrollTop + clientHeight >=
-        tlBlockRect.top + scrollTop + tlBlockRect.height + extraMargin
+        scrollTop + clientHeight
+        >= tlBlockRect.top + scrollTop + tlBlockRect.height + extraMargin
       ) {
         tlBlockEl.classList.add('animate-up-delay-1');
       }
@@ -43,57 +43,57 @@ const useScrollAnimate = () => {
       }
 
       if (
-        scrollTop + clientHeight >=
-        box1Rect.top + scrollTop + box1Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box1Rect.top + scrollTop + box1Rect.height - extraMargin
       ) {
         box1El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box2Rect.top + scrollTop + box2Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box2Rect.top + scrollTop + box2Rect.height - extraMargin
       ) {
         box2El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box3Rect.top + scrollTop + box3Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box3Rect.top + scrollTop + box3Rect.height - extraMargin
       ) {
         box3El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box4Rect.top + scrollTop + box4Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box4Rect.top + scrollTop + box4Rect.height - extraMargin
       ) {
         box4El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box5Rect.top + scrollTop + box5Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box5Rect.top + scrollTop + box5Rect.height - extraMargin
       ) {
         box5El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box6Rect.top + scrollTop + box6Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box6Rect.top + scrollTop + box6Rect.height - extraMargin
       ) {
         box6El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        box7Rect.top + scrollTop + box7Rect.height - extraMargin
+        scrollTop + clientHeight
+        >= box7Rect.top + scrollTop + box7Rect.height - extraMargin
       ) {
         box7El.classList.add('animate-up-delay-1');
       }
 
       if (
-        scrollTop + clientHeight >=
-        projBox1Rect.top + scrollTop + projBox1Rect.height
+        scrollTop + clientHeight
+        >= projBox1Rect.top + scrollTop + projBox1Rect.height
       ) {
         projBox1El.classList.add('animate-up-delay-1');
       }
@@ -103,8 +103,8 @@ const useScrollAnimate = () => {
       }
 
       if (
-        scrollTop + clientHeight >=
-        accBlockRect.top + scrollTop + accBlockRect.height
+        scrollTop + clientHeight
+        >= accBlockRect.top + scrollTop + accBlockRect.height
       ) {
         accBlockEl.classList.add('start-animate');
       }

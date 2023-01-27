@@ -1,5 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 
 const zeroWidth = {
@@ -9,10 +8,26 @@ const zeroWidth = {
 };
 
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,jsx,ts,tsx}',
-    './src/components/**/*.{js,jsx,ts,tsx}',
-  ],
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    options: {
+      safelist: [
+        'mr-0.5',
+        'animate-slider-left',
+        'animate-slider-right',
+        'svg-sun-light',
+        'svg-sun-dark',
+        'svg-moon-light',
+        'svg-moon-dark',
+        'animate-block-width-interpolate',
+        'animate-up-delay-1',
+        'svg-light-mode',
+        'start-animate',
+      ],
+      keyframes: true,
+      fontFace: true,
+    },
+  },
   darkMode: 'class',
   theme: {
     fill: (theme) => ({
@@ -172,17 +187,4 @@ module.exports = {
       boxShadow: ['hover'],
     },
   },
-  plugins: [
-    require('tailwindcss-pseudo-elements'),
-    plugin(function ({ addUtilities }) {
-      addUtilities(
-        {
-          '.empty-content': {
-            content: "''",
-          },
-        },
-        ['before']
-      );
-    }),
-  ],
 };

@@ -21,7 +21,7 @@ import InterviewDarkSvg from '../../svgs/interview-dark.svg';
 import SoftwareEngineerDarkSvg from '../../svgs/software-engineer-dark.svg';
 import SoftwareEngineerLightSvg from '../../svgs/software-engineer-light.svg';
 
-const Timeline = () => {
+function Timeline() {
   const { theme } = useContext(GeneralContext);
 
   const buildingVectorProps = {
@@ -91,9 +91,7 @@ const Timeline = () => {
         <div id="working-vector">
           This image vector shows a person who is coding on his laptop.
         </div>
-        <div id="software-engineer">
-          This image vector shows a software engineer.
-        </div>
+        <div id="software-engineer">This image vector shows a software engineer.</div>
       </div>
       <TimelineBox
         boxId="timeline-box-1"
@@ -103,7 +101,7 @@ const Timeline = () => {
                 `}
         date="2015-2020"
         headerLink={
-          <Link url="https://uplb.edu.ph/main/" title="University of the Philippines" />
+          <Link href="https://uplb.edu.ph/main/" title="University of the Philippines" />
         }
         svgComponent={
           theme === 'light' ? (
@@ -144,16 +142,16 @@ const Timeline = () => {
           )
         }
         headerLink={
-          <Link url="https://questronix.com.ph/" title="Questronix Corporation" />
+          <Link href="https://questronix.com.ph/" title="Questronix Corporation" />
         }
-        footer={
+        footer={(
           <TechStack
             stack={[
               { name: 'vue', title: 'Vue JS' },
               { name: 'bootstrap', title: 'Bootstrap Vue' },
             ]}
           />
-        }
+        )}
       />
       <TimelineBox
         boxId="timeline-box-4"
@@ -170,9 +168,9 @@ const Timeline = () => {
           )
         }
         headerLink={
-          <Link url="https://questronix.com.ph/" title="Undergraduate Thesis" />
+          <Link href="https://questronix.com.ph/" title="Undergraduate Thesis" />
         }
-        footer={
+        footer={(
           <>
             <KeyCombination style={{ marginTop: '1rem' }} />
             <TechStack
@@ -186,7 +184,7 @@ const Timeline = () => {
               stack={[
                 { name: 'mongodb', title: 'MongoDB' },
                 { name: 'react-js', title: 'React JS' },
-                { name: 'node-js', title: 'Node JS' },
+                { name: 'nodejs', title: 'Node JS' },
                 { name: 'redux', title: 'Redux' },
                 { name: 'material-ui', title: 'Material UI' },
                 { name: 'npm', title: 'NPM' },
@@ -196,7 +194,7 @@ const Timeline = () => {
               ]}
             />
           </>
-        }
+        )}
       />
       <TimelineBox
         boxId="timeline-box-5"
@@ -213,8 +211,8 @@ const Timeline = () => {
             <InterviewDarkSvg {...firstJobVectorProps} />
           )
         }
-        headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
-        footer={
+        headerLink={<Link href="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
+        footer={(
           <>
             <TechStack
               techTerminology="Tools"
@@ -232,7 +230,7 @@ const Timeline = () => {
               ]}
             />
           </>
-        }
+        )}
       />
       <TimelineBox
         boxId="timeline-box-6"
@@ -249,8 +247,8 @@ const Timeline = () => {
             <DevJobDarkSvg {...devJobVectorProps} />
           )
         }
-        headerLink={<Link url="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
-        footer={
+        headerLink={<Link href="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
+        footer={(
           <>
             <TechStack
               techTerminology="Tools"
@@ -273,7 +271,7 @@ const Timeline = () => {
               ]}
             />
           </>
-        }
+        )}
       />
       <TimelineBox
         boxId="timeline-box-7"
@@ -290,14 +288,17 @@ const Timeline = () => {
             <SoftwareEngineerDarkSvg {...softEngVectorProps} />
           )
         }
-        headerLink={
-          <Link url="https://research.samsung.com/srph" title="Samsung Research & Development Insitute" />
-        }
-        footer={
+        headerLink={(
+          <Link
+            href="https://research.samsung.com/srph"
+            title="Samsung Research & Development Insitute"
+          />
+        )}
+        footer={(
           <>
             <Link
               style={{ margin: '1rem 0 0 0', fontSize: '0.85rem' }}
-              url="https://www.youtube.com/watch?v=63CW27yukck"
+              href="https://www.youtube.com/watch?v=63CW27yukck"
               title="Vista - Zero-touch operation for true automation"
             />
             <TechStack
@@ -318,10 +319,10 @@ const Timeline = () => {
               ]}
             />
           </>
-        }
+        )}
       />
     </div>
   );
-};
+}
 
 export default Timeline;

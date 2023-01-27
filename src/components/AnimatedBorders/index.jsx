@@ -1,14 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const AnimatedBorders = ({ hovered }) => {
-  let topBorderClass =
-    'absolute top-0 right-0 w-full h-1 bg-green-dark dark:bg-mint-dark';
-  let leftBorderClass =
-    'absolute top-0 left-0 transform rotate-90 origin-top-left w-full h-1 bg-green-dark dark:bg-mint-dark';
-  let bottomBorderClass =
-    'absolute bottom-0 left-0 w-full h-1 bg-green-dark dark:bg-mint-dark';
-  let rightBorderClass =
-    'absolute bottom-0 right-0 transform -rotate-270 origin-bottom-right w-full h-1 bg-green-dark dark:bg-mint-dark';
+function AnimatedBorders({ hovered }) {
+  let topBorderClass = 'absolute top-0 right-0 w-full h-1 bg-green-dark dark:bg-mint-dark';
+  let leftBorderClass = 'absolute top-0 left-0 transform rotate-90 origin-top-left w-full h-1 bg-green-dark dark:bg-mint-dark';
+  let bottomBorderClass = 'absolute bottom-0 left-0 w-full h-1 bg-green-dark dark:bg-mint-dark';
+  let rightBorderClass = 'absolute bottom-0 right-0 transform -rotate-270 origin-bottom-right w-full h-1 bg-green-dark dark:bg-mint-dark';
 
   if (hovered) {
     topBorderClass = [topBorderClass, 'animate-block-width-interpolate'].join(' ');
@@ -25,6 +22,10 @@ const AnimatedBorders = ({ hovered }) => {
       <div className={rightBorderClass} />
     </>
   );
+}
+
+AnimatedBorders.propTypes = {
+  hovered: PropTypes.bool.isRequired,
 };
 
 export default AnimatedBorders;

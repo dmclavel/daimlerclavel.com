@@ -1,10 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ title, description, image, article }) => {
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        twitterUsername
+      }
+    }
+  }
+`;
+function SEO({
+  title, description, image, article,
+}) {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
@@ -71,7 +87,7 @@ const SEO = ({ title, description, image, article }) => {
       <script type="application/ld+json">{JSON.stringify(jsonLdAuthor)}</script>
     </Helmet>
   );
-};
+}
 
 SEO.propTypes = {
   title: PropTypes.string,
@@ -88,18 +104,3 @@ SEO.defaultProps = {
 };
 
 export default SEO;
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;
