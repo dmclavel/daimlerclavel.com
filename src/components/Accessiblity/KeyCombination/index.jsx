@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import GeneralContext from '../../../context/general';
 
-function KeyCombination({ ...rest }) {
+function KeyCombination({ style }) {
   const { showIconText } = useContext(GeneralContext);
   let message = 'Not familiar with these icons?';
 
   if (showIconText) message = 'Display icons instead?';
 
   return (
-    <div {...rest} className="flex items-center font-sans">
+    <div style={style} className="flex items-center font-sans">
       <span className="text-sm dark:text-white-emphasis key-combination-text">
         <span className="underline">{message}</span>
         <span> Press</span>
@@ -25,11 +25,11 @@ function KeyCombination({ ...rest }) {
 }
 
 KeyCombination.propTypes = {
-  rest: PropTypes.object,
+  style: PropTypes.shape({}),
 };
 
 KeyCombination.defaultProps = {
-  rest: {},
+  style: {},
 };
 
 export default KeyCombination;

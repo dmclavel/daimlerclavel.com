@@ -5,14 +5,14 @@ import useFocusEvents from '../../utils/hooks/focus';
 import GithubSvg from '../../svgs/github.svg';
 import ExternalLinkSvg from '../../svgs/external-link.svg';
 
-const ProjectBox = ({
+function ProjectBox({
   boxId,
   projectTitle,
   projectRepository,
   projectLink,
   content,
   stack,
-}) => {
+}) {
   const isGithubLinkFocused = useFocusEvents(`#${boxId}-github-link`);
   const isWebsiteLinkFocused = useFocusEvents(`#${boxId}-website-link`);
 
@@ -54,8 +54,9 @@ const ProjectBox = ({
             <li
               key={`${lib}-${boxId}`}
               className="text-sm mr-3 content-before"
-              tw-content-before="※ "
             >
+              ※
+              {' '}
               {lib}
             </li>
           ))}
@@ -87,7 +88,7 @@ const ProjectBox = ({
       </div>
     </div>
   );
-};
+}
 
 ProjectBox.propTypes = {
   boxId: PropTypes.string.isRequired,
@@ -95,7 +96,7 @@ ProjectBox.propTypes = {
   projectRepository: PropTypes.string.isRequired,
   projectLink: PropTypes.string.isRequired,
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  stack: PropTypes.array,
+  stack: PropTypes.arrayOf(PropTypes.string),
 };
 
 ProjectBox.defaultProps = {

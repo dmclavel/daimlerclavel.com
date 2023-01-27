@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TimelineBox = ({
+function TimelineBox({
   boxId,
   position,
   content,
@@ -10,7 +10,7 @@ const TimelineBox = ({
   date,
   svgComponent,
   footer,
-}) => {
+}) {
   const timelineBox = (
     <div className="flex flex-col bg-gray-100 dark:bg-blue-dark p-4 w-full lg:w-5/12 rounded-sm shadow">
       <div className="flex justify-center">{svgComponent}</div>
@@ -38,15 +38,13 @@ const TimelineBox = ({
   const emptyItem = <div className="hidden lg:flex w-full lg:w-5/12" />;
 
   return (
-    <>
-      <div id={boxId} className="flex mb-4 lg:mb-0 opacity-0">
-        {position === 'left' ? timelineBox : emptyItem}
-        {middleLine}
-        {position === 'right' ? timelineBox : emptyItem}
-      </div>
-    </>
+    <div id={boxId} className="flex mb-4 lg:mb-0 opacity-0">
+      {position === 'left' ? timelineBox : emptyItem}
+      {middleLine}
+      {position === 'right' ? timelineBox : emptyItem}
+    </div>
   );
-};
+}
 
 TimelineBox.propTypes = {
   boxId: PropTypes.string.isRequired,

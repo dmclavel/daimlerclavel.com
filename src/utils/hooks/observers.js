@@ -25,19 +25,18 @@ const useResizeObserver = (type, elementNode) => {
         elementResizeObserver = new ResizeObserver((entries) => {
           let entryWidth = [];
           let entryHeight = [];
-          /* eslint-disable no-restricted-syntax */
-          for (const entry of entries) {
+          entries.forEach((entry) => {
             entryWidth = entryWidth.concat(entry.contentRect.width);
             entryHeight = entryHeight.concat(entry.contentRect.height);
-          }
+          });
 
           setWidth([...entryWidth]);
           setHeight([...entryHeight]);
         });
 
-        try {
+        if (elementResizeObserver && 'observe' in elementResizeObserver) {
           elementResizeObserver.observe(elementNode);
-        } catch (_e) {}
+        }
         break;
       }
       default:

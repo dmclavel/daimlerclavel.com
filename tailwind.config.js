@@ -9,10 +9,7 @@ const zeroWidth = {
 };
 
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,jsx,ts,tsx}',
-    './src/components/**/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./src/pages/**/*.{js,jsx,ts,tsx}', './src/components/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
   theme: {
     fill: (theme) => ({
@@ -174,14 +171,14 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-pseudo-elements'),
-    plugin(function ({ addUtilities }) {
+    plugin(({ addUtilities }) => {
       addUtilities(
         {
           '.empty-content': {
             content: "''",
           },
         },
-        ['before']
+        ['before'],
       );
     }),
   ],

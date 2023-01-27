@@ -17,7 +17,7 @@ const useKeyboardShortcuts = () => {
         }));
       }
     },
-    [combinationObject]
+    [combinationObject],
   );
 
   useEffect(() => {

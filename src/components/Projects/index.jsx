@@ -2,7 +2,7 @@ import React from 'react';
 
 import ProjectBox from '../ProjectBox';
 
-const Projects = () => {
+function Projects() {
   return (
     <>
       <div
@@ -21,19 +21,19 @@ const Projects = () => {
           projectTitle="Personal Portfolio (v1)"
           projectLink="https://dmclavel.github.io/"
           projectRepository="https://github.com/dmclavel/dmclavel.github.io"
-          content={
+          content={(
             <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
               This is the first version of my portfolio which I made way back 2019. I
               integrated a lot of pre-made libraries in this portfolio like Typed.js, Owl
               Carousel, Easy Pie Chart and Bootstrap. Find out how I leverage these
               existing libraries in my portfolio.
             </span>
-          }
+          )}
           stack={['Javascript', 'HTML', 'CSS', 'jQuery']}
         />
       </div>
     </>
   );
-};
+}
 
 export default Projects;
