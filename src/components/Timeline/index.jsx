@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import GeneralContext from '../../context/general';
 
 import TimelineBox from '../TimelineBox';
-import Link from '../Link';
+import Link from '../Common/Link';
 import TechStack from '../TechStack';
 import KeyCombination from '../Accessiblity/KeyCombination';
 
@@ -25,38 +25,31 @@ function Timeline() {
   const { theme } = useContext(GeneralContext);
 
   const buildingVectorProps = {
-    'aria-label': 'graduation',
-    'aria-describedby': 'graduation-vector',
+    'aria-labelledby': 'graduation-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const learningVectorProps = {
-    'aria-label': 'learning',
-    'aria-describedby': 'learning-vector',
+    'aria-labelledby': 'learning-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const internVectorProps = {
-    'aria-label': 'training',
-    'aria-describedby': 'training-vector',
+    'aria-labelledby': 'training-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const thesisVectorProps = {
-    'aria-label': 'focusing',
-    'aria-describedby': 'focusing-vector',
+    'aria-labelledby': 'focusing-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const firstJobVectorProps = {
-    'aria-label': 'achievement',
-    'aria-describedby': 'achievement-vector',
+    'aria-labelledby': 'achievement-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const devJobVectorProps = {
-    'aria-label': 'working',
-    'aria-describedby': 'working-vector',
+    'aria-labelledby': 'working-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const softEngVectorProps = {
-    'aria-label': 'software engineer',
-    'aria-describedby': 'software-engineer',
+    'aria-labelledby': 'software-engineer',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
 
@@ -68,9 +61,9 @@ function Timeline() {
         className="flex justify-center items-center mb-16 opacity-0"
       >
         <div className="w-12 lg:w-40 mr-2 h-0.5 bg-green-light dark:bg-mint-light" />
-        <p className="text-center text-black dark:text-white-emphasis text-xl lg:text-2xl">
+        <h1 className="text-center text-black dark:text-white-emphasis text-xl lg:text-2xl">
           Personal Timeline
-        </p>
+        </h1>
         <div className="w-12 lg:w-40 ml-2 h-0.5 bg-green-light dark:bg-mint-light" />
       </div>
       <div className="opacity-0 absolute">
@@ -100,9 +93,18 @@ function Timeline() {
                    Graduated with a degree in Bachelor of Science in Computer Science at one of the top universities in the Philippines.
                 `}
         date="2015-2020"
-        headerLink={
-          <Link href="https://uplb.edu.ph/main/" title="University of the Philippines" />
-        }
+        headerLink={(
+          <Link
+            href="https://uplb.edu.ph/main/"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to university website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            University of the Philippines
+          </Link>
+        )}
         svgComponent={
           theme === 'light' ? (
             <BuildingLightSvg {...buildingVectorProps} />
@@ -141,9 +143,18 @@ function Timeline() {
             <WorkingDarkSvg {...internVectorProps} />
           )
         }
-        headerLink={
-          <Link href="https://questronix.com.ph/" title="Questronix Corporation" />
-        }
+        headerLink={(
+          <Link
+            href="https://questronix.com.ph/"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to questronix corporation website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Questronix Corporation
+          </Link>
+        )}
         footer={(
           <TechStack
             stack={[
@@ -167,9 +178,18 @@ function Timeline() {
             <WorldDarkSvg {...thesisVectorProps} />
           )
         }
-        headerLink={
-          <Link href="https://questronix.com.ph/" title="Undergraduate Thesis" />
-        }
+        headerLink={(
+          <Link
+            href="https://www.dropbox.com/s/51jte2exniw5kzc/CMSC190-2_DClavel_journal.pdf?dl=0"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'view thesis journal',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Undergraduate Thesis
+          </Link>
+        )}
         footer={(
           <>
             <KeyCombination style={{ marginTop: '1rem' }} />
@@ -211,7 +231,18 @@ function Timeline() {
             <InterviewDarkSvg {...firstJobVectorProps} />
           )
         }
-        headerLink={<Link href="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
+        headerLink={(
+          <Link
+            href="https://www.spiralytics.com/"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to spiralytics company website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Spiralytics, Inc.
+          </Link>
+        )}
         footer={(
           <>
             <TechStack
@@ -247,7 +278,18 @@ function Timeline() {
             <DevJobDarkSvg {...devJobVectorProps} />
           )
         }
-        headerLink={<Link href="https://www.spiralytics.com/" title="Spiralytics, Inc." />}
+        headerLink={(
+          <Link
+            href="https://www.spiralytics.com/"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to spiralytics company website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Spiralytics, Inc.
+          </Link>
+        )}
         footer={(
           <>
             <TechStack
@@ -291,16 +333,27 @@ function Timeline() {
         headerLink={(
           <Link
             href="https://research.samsung.com/srph"
-            title="Samsung Research & Development Insitute"
-          />
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to samsung electronics company website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Samsung Research &amp; Development Insitute
+          </Link>
         )}
         footer={(
           <>
             <Link
-              style={{ margin: '1rem 0 0 0', fontSize: '0.85rem' }}
               href="https://www.youtube.com/watch?v=63CW27yukck"
-              title="Vista - Zero-touch operation for true automation"
-            />
+              target="_blank"
+              accessibility={{
+                'aria-label': 'go to vista ui youtube video explanation',
+              }}
+              className="inline w-fit text-sm text-green dark:text-mint mt-4"
+            >
+              Vista - Zero-touch operation for true automation
+            </Link>
             <TechStack
               techTerminology="Tools"
               stack={[

@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
 import GeneralContext from '../../context/general';
+import Link from '../Common/Link';
 
 import CoolLogo from '../CoolLogo';
 import SunSvg from '../../svgs/sun.svg';
@@ -61,6 +62,7 @@ function NavigationBar() {
 
   const navLinksCmp = (inMenu = false) => {
     let linkClass = 'flex flex-col start-slide-right opacity-0';
+    const tabIndexValue = (menuOpened || !burgerMenuBreakPoint.matches) ? 0 : -1;
 
     if (inMenu) {
       linkClass = [linkClass, 'items-center', 'mt-4'].join(' ');
@@ -72,27 +74,57 @@ function NavigationBar() {
       <>
         <div style={{ animationDelay: '200ms' }} className={linkClass}>
           <span className="text-green-dark dark:text-mint-light font-bold"> 01. </span>
-          <a href="#side-projects" className="text-green dark:text-mint font-medium">
+          <Link
+            href="#side-projects"
+            className="text-green dark:text-mint font-medium"
+            accessibility={{
+              tabIndex: tabIndexValue,
+              'aria-label': 'go to projects section',
+            }}
+          >
             Projects
-          </a>
+          </Link>
         </div>
         <div style={{ animationDelay: '400ms' }} className={linkClass}>
           <span className="text-green-dark dark:text-mint-light font-bold"> 02. </span>
-          <a href="#timeline" className="text-green dark:text-mint font-medium">
+          <Link
+            href="#timeline"
+            className="text-green dark:text-mint font-medium"
+            accessibility={{
+              tabIndex: tabIndexValue,
+              'aria-label': 'go to dev timeline section',
+            }}
+          >
             Dev Timeline
-          </a>
+          </Link>
         </div>
         <div style={{ animationDelay: '600ms' }} className={linkClass}>
           <span className="text-green-dark dark:text-mint-light font-bold"> 03. </span>
-          <a href="#contact-me" className="text-green dark:text-mint font-medium">
+          <Link
+            href="#contact-me"
+            className="text-green dark:text-mint font-medium"
+            accessibility={{
+              tabIndex: tabIndexValue,
+              'aria-label': 'go to contact section',
+            }}
+          >
             Contact
-          </a>
+          </Link>
         </div>
         <div style={{ animationDelay: '800ms' }} className={linkClass}>
           <span className="text-green-dark dark:text-mint-light font-bold"> 04. </span>
-          <a href="#side-projects" className="text-green dark:text-mint font-medium">
-            Resume
-          </a>
+          <Link
+            href="https://www.dropbox.com/s/9gkr1kxmmlqpv15/Clavel%20CV%202023%20-%20PDF.pdf?dl=0"
+            target="_blank"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="text-green dark:text-mint font-medium"
+            accessibility={{
+              tabIndex: tabIndexValue,
+              'aria-label': 'view curriculum vitae in a new tab',
+            }}
+          >
+            CV
+          </Link>
         </div>
       </>
     );
@@ -102,7 +134,8 @@ function NavigationBar() {
     () => (
       <>
         <SunSvg
-          alt="light"
+          alt=""
+          aria-label="light-mode"
           id="sun-light"
           className={`mr-2 w-7 h-7 ${
             theme === 'dark' ? 'svg-sun-dark' : 'svg-sun-light'
@@ -113,7 +146,7 @@ function NavigationBar() {
           role="switch"
           aria-label="theme-switcher"
           aria-checked={theme === 'dark'}
-          tabIndex={0}
+          tabIndex={(menuOpened || !burgerMenuBreakPoint.matches) ? 0 : -1}
           onClick={toggleThemeState}
           onKeyDown={(event) => {
             if (event.key === 'Enter') {
@@ -131,7 +164,8 @@ function NavigationBar() {
           />
         </div>
         <MoonSvg
-          alt="dark"
+          alt=""
+          aria-label="dark-mode"
           id="moon-dark"
           className={`ml-2 w-6 h-6 ${
             theme === 'dark' ? 'svg-moon-dark' : 'svg-moon-light'
@@ -139,7 +173,7 @@ function NavigationBar() {
         />
       </>
     ),
-    [theme, toggleThemeState],
+    [theme, menuOpened, burgerMenuBreakPoint, toggleThemeState],
   );
 
   return (
@@ -147,15 +181,14 @@ function NavigationBar() {
       <div className="flex w-1/2 lg:w-1/4 start-slide-right opacity-0">
         <CoolLogo />
       </div>
-      <div className="hidden lg:flex lg:w-2/4 justify-center items-center">
+      <nav className="hidden lg:flex lg:w-2/4 justify-center items-center">
         {navLinksCmp()}
-      </div>
+      </nav>
       <div id="outer-burger-menu" className={burgerMenuClass}>
         <span id="burger-menu-description" className="opacity-0 absolute -z-1">
           This will open a sidebar with different navigation links to the site.
         </span>
         <div
-          aria-label="burger-menu"
           aria-describedby="burger-menu-description"
           role="menu"
           className="cursor-pointer"
@@ -186,11 +219,17 @@ function NavigationBar() {
       </div>
       {menuOpened && (
         <div
-          role="none"
-          onKeyPress={() => {}}
+          aria-label="close menu"
+          role="button"
+          tabIndex={0}
+          onKeyPress={(event) => {
+            if (event.key === 'Enter') {
+              handleBurgerMenuClick();
+            }
+          }}
           onClick={handleBurgerMenuClick}
           style={{ width: '25vw', zIndex: 1 }}
-          className="fixed top-0 left-0 h-full backdrop-blur"
+          className="fixed top-0 left-0 h-full backdrop-blur menu-backdrop"
         />
       )}
       <div

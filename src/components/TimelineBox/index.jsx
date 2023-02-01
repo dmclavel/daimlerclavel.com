@@ -14,13 +14,13 @@ function TimelineBox({
   const timelineBox = (
     <div className="flex flex-col bg-gray-100 dark:bg-blue-dark p-4 w-full lg:w-5/12 rounded-sm shadow">
       <div className="flex justify-center">{svgComponent}</div>
-      <span className="text-center text-base text-black-semi dark:text-white tracking-wider mb-2">
+      <h2 className="text-center text-base text-black-semi dark:text-white tracking-wider mb-2">
         {date}
-      </span>
+      </h2>
       {jobTitle && (
-        <span className="text-base text-green-dark dark:text-mint-light tracking-wider">
+        <h2 className="text-base text-green-dark dark:text-mint-light tracking-wider">
           {jobTitle}
-        </span>
+        </h2>
       )}
       {headerLink}
       <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
@@ -38,11 +38,16 @@ function TimelineBox({
   const emptyItem = <div className="hidden lg:flex w-full lg:w-5/12" />;
 
   return (
-    <div id={boxId} className="flex mb-4 lg:mb-0 opacity-0">
+    <section
+      id={boxId}
+      role="link"
+      tabIndex={0}
+      className="flex mb-4 lg:mb-0 opacity-0"
+    >
       {position === 'left' ? timelineBox : emptyItem}
       {middleLine}
       {position === 'right' ? timelineBox : emptyItem}
-    </div>
+    </section>
   );
 }
 
