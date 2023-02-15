@@ -41,7 +41,7 @@ module.exports = {
         background_color: '#202945',
         theme_color: '#31FFCE',
         display: 'minimal-ui',
-        icon: 'https://www.dropbox.com/s/w54gbn5wg6opiuv/favicon.png?dl=0',
+        icon: 'src/images/favicon.png',
       },
     },
     {
