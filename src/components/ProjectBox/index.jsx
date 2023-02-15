@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useFocusEvents from '../../utils/hooks/focus';
+import Link from '../Common/Link';
 
 import GithubSvg from '../../svgs/github.svg';
 import ExternalLinkSvg from '../../svgs/external-link.svg';
@@ -32,18 +33,18 @@ function ProjectBox({
   }, [isWebsiteLinkFocused, isGithubLinkFocused, boxId]);
 
   return (
-    <div
+    <section
       id={boxId}
       className="opacity-0 relative flex flex-col justify-between filter-project-box dark:filter-project-box bg-gray-100 dark:bg-blue-dark p-4 rounded-sm shadow-mint project-box mt-4"
     >
       <header className="flex flex-col">
-        <span className="text-base text-green dark:text-mint-light tracking-wider w-3/4 mb-2">
+        <h1 className="text-base text-green dark:text-mint-light tracking-wider w-3/4 mb-2">
           {projectTitle}
-        </span>
+        </h1>
         {typeof content === 'string' ? (
-          <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
+          <p className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
             {content}
-          </span>
+          </p>
         ) : (
           content
         )}
@@ -62,31 +63,35 @@ function ProjectBox({
           ))}
         </ul>
       </footer>
-      <div className="flex absolute top-3 right-3 svg-tooltips opacity-1 transform lg:opacity-0 lg:translate-x-3 lg:-translate-y-3 transition ease-linear duration-200">
+      <nav className="flex absolute top-3 right-3 svg-tooltips opacity-1 transform lg:opacity-0 lg:translate-x-3 lg:-translate-y-3 transition ease-linear duration-200">
         <div title="Go to the project's Github repository.">
-          <a
+          <Link
             id={`${boxId}-github-link`}
             href={projectRepository}
+            referrerPolicy="no-referrer"
             target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Go to the Github repository of this project."
+            accessibility={{
+              'aria-label': 'go to github repository',
+            }}
           >
             <GithubSvg className="w-5 h-5 fill-white mr-2 cursor-pointer" />
-          </a>
+          </Link>
         </div>
         <div title="Go to the project's website.">
-          <a
+          <Link
             id={`${boxId}-website-link`}
             href={projectLink}
             target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Go to the website of this project."
+            referrerPolicy="no-referrer"
+            accessibility={{
+              'aria-label': 'go to project website',
+            }}
           >
             <ExternalLinkSvg className="w-5 h-5 fill-white cursor-pointer" />
-          </a>
+          </Link>
         </div>
-      </div>
-    </div>
+      </nav>
+    </section>
   );
 }
 

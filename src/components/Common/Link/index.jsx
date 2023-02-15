@@ -9,19 +9,29 @@ import {
 } from './constants';
 
 function Link({
+  id,
   href,
   target,
   referrerPolicy,
   className,
   accessibility,
+  onClick,
   children,
 }) {
+  const identifiers = {};
+  if (id.trim().length) identifiers.id = id;
+  if (className.trim().length) identifiers.className = className;
+
+  const events = {};
+  if (typeof onClick === 'function') events.onClick = onClick;
+
   return (
     <a
       href={href}
       target={target}
       referrerPolicy={referrerPolicy}
-      className={className}
+      {...identifiers}
+      {...events}
       {...accessibility}
     >
       {children}
@@ -30,10 +40,15 @@ function Link({
 }
 
 Link.propTypes = {
+  id: PropTypes.string,
   href: PropTypes.string.isRequired,
   target: PropTypes.oneOf(ANCHOR_TARGET_VALUES),
   referrerPolicy: PropTypes.oneOf(ANCHOR_REFERRER_POLICY_VALUES),
   className: PropTypes.string,
+  onClick: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func,
+  ]),
   accessibility: PropTypes.shape({
     tabIndex: PropTypes.oneOfType([
       PropTypes.number,
@@ -46,9 +61,11 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
+  id: '',
   target: ANCHOR_TARGET_VALUES[ANCHOR_TARGET_DEF_IDX],
   referrerPolicy: ANCHOR_REFERRER_POLICY_VALUES[ANCHOR_REFERRER_POLICY_DEF_IDX],
   className: '',
+  onClick: null,
   accessibility: {},
 };
 

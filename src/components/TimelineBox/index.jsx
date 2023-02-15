@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import navigateFakeLink from '../../utils/links/navigate';
+
 function TimelineBox({
   boxId,
   position,
+  fakeLink,
   content,
   jobTitle,
   headerLink,
@@ -42,6 +45,13 @@ function TimelineBox({
       id={boxId}
       role="link"
       tabIndex={0}
+      onKeyPress={(event) => {
+        if (event.key === 'Enter') {
+          const idSplit = boxId.split('-');
+          const idxNum = Number(idSplit[idSplit.length - 1]) + 1;
+          navigateFakeLink(fakeLink || `#timeline-box-${idxNum}`, 'focus');
+        }
+      }}
       className="flex mb-4 lg:mb-0 opacity-0"
     >
       {position === 'left' ? timelineBox : emptyItem}
@@ -54,6 +64,7 @@ function TimelineBox({
 TimelineBox.propTypes = {
   boxId: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  fakeLink: PropTypes.string,
   content: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   jobTitle: PropTypes.string,
@@ -63,6 +74,7 @@ TimelineBox.propTypes = {
 };
 
 TimelineBox.defaultProps = {
+  fakeLink: '',
   svgComponent: null,
   headerLink: null,
   footer: null,

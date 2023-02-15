@@ -5,11 +5,11 @@ import TechSVG from '../TechSVG';
 
 function TechStack({ stack, techTerminology }) {
   return (
-    <div className="font-sans flex flex-wrap items-center mt-2">
-      <span className="dark:text-white-emphasis mr-2">
+    <section className="font-sans flex flex-wrap items-center mt-2">
+      <h1 className="dark:text-white-emphasis mr-2">
         {techTerminology}
         :
-      </span>
+      </h1>
       {stack.map((stackObj) => (
         <TechSVG
           key={`svg-${stackObj.name}`}
@@ -17,7 +17,7 @@ function TechStack({ stack, techTerminology }) {
           title={stackObj.title}
         />
       ))}
-    </div>
+    </section>
   );
 }
 

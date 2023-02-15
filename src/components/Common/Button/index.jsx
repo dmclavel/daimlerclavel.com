@@ -7,8 +7,12 @@ function Button({
   type,
   onClick,
   children,
+  id,
   className,
 }) {
+  const identifiers = {};
+  if (id.trim().length) identifiers.id = id;
+  if (className.trim().length) identifiers.className = className;
   return (
     <button
       type={type}
@@ -17,7 +21,7 @@ function Button({
           onClick(e);
         }
       }}
-      className={className}
+      {...identifiers}
     >
       {children}
     </button>
@@ -28,6 +32,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(BUTTON_TYPES),
   onClick: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  id: PropTypes.string,
   className: PropTypes.string,
 };
 
@@ -35,6 +40,7 @@ Button.defaultProps = {
   type: 'button',
   onClick: null,
   children: null,
+  id: '',
   className: '',
 };
 

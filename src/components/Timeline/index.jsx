@@ -4,7 +4,7 @@ import GeneralContext from '../../context/general';
 import TimelineBox from '../TimelineBox';
 import Link from '../Common/Link';
 import TechStack from '../TechStack';
-import KeyCombination from '../Accessiblity/KeyCombination';
+import KeyCombination from '../Common/KeyCombination';
 
 import BuildingDarkSvg from '../../svgs/building-dark.svg';
 import BuildingLightSvg from '../../svgs/building-light.svg';
@@ -318,6 +318,7 @@ function Timeline() {
       <TimelineBox
         boxId="timeline-box-7"
         position="left"
+        fakeLink="#project-box-1-github-link"
         content={`
           I am currently working as a Front-end engineer who develops components for Samsung Vista - a network analysis, visualization and optimization platform. This software provides anomaly detection, root cause analysis and problem solving to minimize the impact from network troubles and service outages.
         `}
