@@ -16,10 +16,11 @@ module.exports = {
     title: 'Daimler Clavel',
     titleTemplate: '%s • Web Developer',
     description:
-      'Daimler Clavel is a front-end web developer who loves building stuff for the web. He has also worked as a CRO practitioner and Data Implementation Analyst.',
-    url: 'https://daimlerclavel.dev',
-    siteUrl: 'https://daimlerclavel.dev',
-    image: '/images/upgrad.jfif',
+      'Daimler Clavel is a front-end engineer who loves building stuff for the web. He has also worked as a CRO practitioner and Data Implementation Analyst.',
+    url: 'https://daimlerclavel.com',
+    siteUrl: 'https://daimlerclavel.com',
+    contentType: 'website',
+    image: 'https://www.dropbox.com/s/mixlnfprqleyokg/upgrad.png?dl=0',
     twitterUsername: '@daimlerclavel',
   },
   plugins: [
@@ -40,7 +41,7 @@ module.exports = {
         background_color: '#202945',
         theme_color: '#31FFCE',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png',
+        icon: 'https://www.dropbox.com/s/w54gbn5wg6opiuv/favicon.png?dl=0',
       },
     },
     {
