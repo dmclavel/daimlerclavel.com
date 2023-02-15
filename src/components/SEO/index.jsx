@@ -19,7 +19,7 @@ const query = graphql`
   }
 `;
 function SEO({
-  title, description, image, article,
+  title, description, image,
 }) {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
@@ -31,6 +31,7 @@ function SEO({
     siteUrl,
     defaultImage,
     twitterUsername,
+    contentType,
   } = site.siteMetadata;
 
   const seo = {
@@ -49,11 +50,11 @@ function SEO({
       '@id': '#daimlerclavel',
     },
     description:
-      'Daimler Clavel is a front-end web developer who loves building stuff for the web. He has also worked as a CRO practitioner and Data Implementation Analyst.',
+      'Daimler Clavel is a front-end web engineer who loves building stuff for the web. He has also worked as a CRO practitioner and Data Implementation Analyst.',
     image: '',
-    url: 'https://daimlerclavel.dev',
+    url: 'https://daimlerclavel.com',
     keywords:
-      'Daimler, Clavel, Daimler Clavel Portfolio, front end web developer, data analyst, cro practitioner, dmclavel, developer portfolio',
+      'Daimler, Clavel, Daimler Clavel Portfolio, frontend engineer, frontend web developer, reactjs developer, data analyst, cro practitioner, dmclavel, developer portfolio',
   };
 
   const jsonLdAuthor = {
@@ -61,8 +62,8 @@ function SEO({
     '@type': 'Person',
     '@id': '#daimlerclavel',
     name: 'Daimler Clavel',
-    email: 'demclavel@gmail.com',
-    url: 'https://daimlerclavel.dev',
+    email: 'dmclavel@alum.up.edu.ph',
+    url: 'https://daimlerclavel.com',
   };
 
   return (
@@ -74,7 +75,7 @@ function SEO({
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
-      {(article ? true : null) && <meta property="og:type" content="article" />}
+      {contentType && <meta property="og:type" content={contentType} />}
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && <meta property="og:description" content={seo.description} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
@@ -93,14 +94,12 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  article: PropTypes.bool,
 };
 
 SEO.defaultProps = {
   title: null,
   description: null,
   image: null,
-  article: false,
 };
 
 export default SEO;
