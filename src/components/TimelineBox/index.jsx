@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import navigateFakeLink from '../../utils/links/navigate';
+
 function TimelineBox({
   boxId,
   position,
+  fakeLink,
   content,
   jobTitle,
   headerLink,
@@ -14,13 +17,13 @@ function TimelineBox({
   const timelineBox = (
     <div className="flex flex-col bg-gray-100 dark:bg-blue-dark p-4 w-full lg:w-5/12 rounded-sm shadow">
       <div className="flex justify-center">{svgComponent}</div>
-      <span className="text-center text-base text-black-semi dark:text-white tracking-wider mb-2">
+      <h2 className="text-center text-base text-black-semi dark:text-white tracking-wider mb-2">
         {date}
-      </span>
+      </h2>
       {jobTitle && (
-        <span className="text-base text-green-dark dark:text-mint-light tracking-wider">
+        <h2 className="text-base text-green-dark dark:text-mint-light tracking-wider">
           {jobTitle}
-        </span>
+        </h2>
       )}
       {headerLink}
       <span className="font-sans text-sm text-black dark:text-white-semi tracking-wide">
@@ -38,17 +41,30 @@ function TimelineBox({
   const emptyItem = <div className="hidden lg:flex w-full lg:w-5/12" />;
 
   return (
-    <div id={boxId} className="flex mb-4 lg:mb-0 opacity-0">
+    <section
+      id={boxId}
+      role="link"
+      tabIndex={0}
+      onKeyPress={(event) => {
+        if (event.key === 'Enter') {
+          const idSplit = boxId.split('-');
+          const idxNum = Number(idSplit[idSplit.length - 1]) + 1;
+          navigateFakeLink(fakeLink || `#timeline-box-${idxNum}`, 'focus');
+        }
+      }}
+      className="flex mb-4 lg:mb-0 opacity-0"
+    >
       {position === 'left' ? timelineBox : emptyItem}
       {middleLine}
       {position === 'right' ? timelineBox : emptyItem}
-    </div>
+    </section>
   );
 }
 
 TimelineBox.propTypes = {
   boxId: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
+  fakeLink: PropTypes.string,
   content: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   jobTitle: PropTypes.string,
@@ -58,6 +74,7 @@ TimelineBox.propTypes = {
 };
 
 TimelineBox.defaultProps = {
+  fakeLink: '',
   svgComponent: null,
   headerLink: null,
   footer: null,

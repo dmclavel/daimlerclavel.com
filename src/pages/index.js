@@ -49,13 +49,13 @@ function Home() {
       <div className="fixed transition ease-linear duration-300 top-0 w-full h-full bg-transparent dark:bg-royal -z-1" />
       <div id="main-block" className="m-8 md:m-14 lg:m-20 font-serif">
         <NavigationBar />
-        <div className="lg:mx-8 xl:mx-44 2xl:mx-60">
+        <main className="lg:mx-8 xl:mx-44 2xl:mx-60">
           {heroSectionCmp}
           <Timeline />
           {projectsCmp}
           {contactsCmp}
           <Footer />
-        </div>
+        </main>
       </div>
     </GeneralContext.Provider>
   );

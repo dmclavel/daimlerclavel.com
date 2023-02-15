@@ -35,6 +35,10 @@ module.exports = {
       green: theme('colors.green.500'),
       blue: theme('colors.blue.500'),
     }),
+    fontSize: {
+      ...defaultTheme.fontSize,
+      clink: ['0.92rem', '1.45rem'],
+    },
     boxShadow: {
       DEFAULT: '0 1px 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px 1px rgba(0, 0, 0, 0.06)',
       mint: '0 1px 3px 0 rgba(255, 255, 255, 0.3), 0 1px 2px 0 rgba(49, 255, 206, 0.03)',

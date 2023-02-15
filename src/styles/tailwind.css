@@ -39,7 +39,7 @@
   }
 
   .force-project-box-hover-effect,
-  .filter-project-box-light:hover {
+  .filter-project-box:hover {
     filter: drop-shadow(2px 2px 4px #12805c);
   }
 
@@ -49,7 +49,7 @@
   }
 
   .force-tooltips-transform,
-  div[id^='project-box']:hover .svg-tooltips {
+  section[id^='project-box']:hover .svg-tooltips {
     transform: translate(0, 0);
     opacity: 1 !important;
   }

@@ -23,10 +23,10 @@ function TechSVG({ stackName, overrideClass, title }) {
     <div title={title}>
       {VectorComponent && !showIconText && <VectorComponent className={svgClassName} />}
       {showIconText && (
-        <span className="mr-2 text-black dark:text-white-emphasis text-sm">
+        <p className="mr-2 text-black dark:text-white-emphasis text-sm">
           {title}
           ,
-        </span>
+        </p>
       )}
     </div>
   );

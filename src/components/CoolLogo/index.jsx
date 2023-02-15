@@ -24,7 +24,6 @@ function CoolLogo() {
   return (
     <button
       type="button"
-      tabIndex={-1}
       onClick={handleClick}
       onMouseOverCapture={handleHover}
       onMouseOutCapture={handleMouseOut}
