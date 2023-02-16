@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "https://daimlerclavel.com/"
+  status = 301
+  force = true
