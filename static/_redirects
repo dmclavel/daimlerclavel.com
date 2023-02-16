@@ -1,2 +1,2 @@
-https://dmclavel.netlify.app/* / 301!
-https://www.daimlerclavel.com/* / 301!
+https://dmclavel.netlify.app/* https://daimlerclavel.com/:splat 200!
+https://www.daimlerclavel.com/* https://daimlerclavel.com/:splat 200!
