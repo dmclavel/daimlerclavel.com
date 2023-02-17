@@ -13,6 +13,7 @@ const query = graphql`
         defaultDescription: description
         siteUrl: url
         defaultImage: image
+        twitterTitle
         twitterUsername
       }
     }
@@ -31,6 +32,7 @@ function SEO({
     siteUrl,
     defaultImage,
     twitterUsername,
+    twitterTitle,
     contentType,
   } = site.siteMetadata;
 
@@ -79,9 +81,9 @@ function SEO({
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && <meta property="og:description" content={seo.description} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
-      <meta name="twitter:card" content="summary_large_image" />
-      {twitterUsername && <meta name="twitter:creator" content={twitterUsername} />}
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
+      <meta name="twitter:card" content="summary" />
+      {twitterUsername && <meta name="twitter:site" content={twitterUsername} />}
+      {seo.title && <meta name="twitter:title" content={twitterTitle} />}
       {seo.description && <meta name="twitter:description" content={seo.description} />}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
       <script type="application/ld+json">{JSON.stringify(jsonLdWebsite)}</script>

@@ -20,7 +20,8 @@ module.exports = {
     url: 'https://daimlerclavel.com',
     siteUrl: 'https://daimlerclavel.com',
     contentType: 'website',
-    image: 'https://www.dropbox.com/s/mixlnfprqleyokg/upgrad.png?dl=0',
+    image: 'https://daimlerclavel.com/upgrad.png',
+    twitterTitle: 'A Frontend Engineer\'s Portfolio',
     twitterUsername: '@daimlerclavel',
   },
   plugins: [
