@@ -256,6 +256,10 @@
     .key-combination-text {
       display: none;
     }
+
+    .project-box {
+      width: 100%;
+    }
   }
 
   @media screen and (min-width: 1024px) {
