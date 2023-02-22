@@ -54,6 +54,7 @@ Link.propTypes = {
       PropTypes.number,
       PropTypes.string,
     ]),
+    title: PropTypes.string,
     'aria-label': PropTypes.string,
     'aria-labelledby': PropTypes.string,
   }),

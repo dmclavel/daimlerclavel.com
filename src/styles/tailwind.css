@@ -11,6 +11,40 @@
     scroll-behavior: smooth;
   }
 
+  .main-link {
+    position: relative;
+  }
+
+  .main-link:hover::before,
+  .main-link:hover::after {
+    width: 100%;
+  }
+
+  .main-link::before,
+  .main-link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: width 400ms;
+    background-color: #12805c;
+  }
+  
+  .main-link::before {
+    bottom: -2px;
+  }
+
+  .main-link::after {
+    top: -2px;
+    transform: rotate(180deg);
+    transform-origin: left;
+  }
+
+  html.dark .main-link::before,
+  html.dark .main-link::after {
+    background-color: #cefff3;
+  }
+
   .svg-sun-light {
     fill: #ff9f1a;
   }
