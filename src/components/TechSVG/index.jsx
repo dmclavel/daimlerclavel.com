@@ -1,11 +1,11 @@
 /* eslint-disable global-require */
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import GeneralContext from '../../context/general';
+import { useGeneralContext } from '../../context/general';
 
 /* Returns the correct SVG component */
 function TechSVG({ stackName, overrideClass, title }) {
-  const { showIconText } = useContext(GeneralContext);
+  const { showIconText } = useGeneralContext();
   let svgClassName = 'w-5 h-5 mr-2';
 
   if (overrideClass) svgClassName = overrideClass;

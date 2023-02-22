@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import GeneralContext from '../../context/general';
+import React from 'react';
+import { useGeneralContext } from '../../context/general';
 
 import TimelineBox from '../TimelineBox';
 import Link from '../Common/Link';
@@ -22,7 +22,7 @@ import SoftwareEngineerDarkSvg from '../../svgs/software-engineer-dark.svg';
 import SoftwareEngineerLightSvg from '../../svgs/software-engineer-light.svg';
 
 function Timeline() {
-  const { theme } = useContext(GeneralContext);
+  const { theme } = useGeneralContext();
 
   const buildingVectorProps = {
     'aria-labelledby': 'graduation-vector',

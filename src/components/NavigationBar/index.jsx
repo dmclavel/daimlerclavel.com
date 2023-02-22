@@ -1,8 +1,8 @@
 import React, {
-  useState, useEffect, useMemo, useContext,
+  useState, useEffect, useMemo,
 } from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
-import GeneralContext from '../../context/general';
+import { useGeneralContext } from '../../context/general';
 import Link from '../Common/Link';
 import FocusTrap from '../Common/FocusTrap';
 
@@ -16,7 +16,7 @@ function NavigationBar() {
     'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0',
   );
   const burgerMenuBreakPoint = useMediaQuery('(max-width: 1024px)');
-  const { theme, toggleThemeState } = useContext(GeneralContext);
+  const { theme, toggleThemeState } = useGeneralContext();
 
   useEffect(() => {
     if (menuOpened) {
@@ -78,7 +78,7 @@ function NavigationBar() {
           <span className="text-green-dark dark:text-mint-light font-bold"> 01. </span>
           <Link
             href="#side-projects"
-            className="text-green dark:text-mint font-medium"
+            className="text-green dark:text-mint font-medium main-link"
             accessibility={{
               tabIndex: tabIndexValue,
               'aria-label': 'go to projects section',
@@ -92,7 +92,7 @@ function NavigationBar() {
           <span className="text-green-dark dark:text-mint-light font-bold"> 02. </span>
           <Link
             href="#timeline"
-            className="text-green dark:text-mint font-medium"
+            className="text-green dark:text-mint font-medium main-link"
             accessibility={{
               tabIndex: tabIndexValue,
               'aria-label': 'go to dev timeline section',
@@ -106,7 +106,7 @@ function NavigationBar() {
           <span className="text-green-dark dark:text-mint-light font-bold"> 03. </span>
           <Link
             href="#contact-me"
-            className="text-green dark:text-mint font-medium"
+            className="text-green dark:text-mint font-medium main-link"
             accessibility={{
               tabIndex: tabIndexValue,
               'aria-label': 'go to contact section',
@@ -122,7 +122,7 @@ function NavigationBar() {
             href="https://www.dropbox.com/s/9gkr1kxmmlqpv15/Clavel%20CV%202023%20-%20PDF.pdf?dl=0"
             target="_blank"
             referrerPolicy="no-referrer-when-downgrade"
-            className="text-green dark:text-mint font-medium"
+            className="text-green dark:text-mint font-medium main-link"
             accessibility={{
               tabIndex: tabIndexValue,
               'aria-label': 'view curriculum vitae in a new tab',

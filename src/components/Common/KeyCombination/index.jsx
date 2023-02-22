@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import GeneralContext from '../../../context/general';
+import { useGeneralContext } from '../../../context/general';
 
 function KeyCombination({ style }) {
-  const { showIconText } = useContext(GeneralContext);
+  const { showIconText } = useGeneralContext();
   let message = 'Not familiar with these icons?';
 
   if (showIconText) message = 'Display icons instead?';
