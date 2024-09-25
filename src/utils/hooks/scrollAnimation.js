@@ -14,13 +14,15 @@ const useScrollAnimate = () => {
       const chBlockRect = chBlockEl.getBoundingClientRect();
       const accBlockRect = accBlockEl.getBoundingClientRect();
 
-      const timelineBoxElements = document.querySelectorAll('section[id*=timeline-box]') || [];
-      const projectBoxElements = document.querySelectorAll('section[id*=project-box]') || [];
+      const timelineBoxElements =
+        document.querySelectorAll('section[id*=timeline-box]') || [];
+      const projectBoxElements =
+        document.querySelectorAll('section[id*=project-box]') || [];
 
       // scroll positon >= element position
       if (
-        scrollTop + clientHeight
-        >= tlBlockRect.top + scrollTop + tlBlockRect.height + EXTRA_MARGIN
+        scrollTop + clientHeight >=
+        tlBlockRect.top + scrollTop + tlBlockRect.height + EXTRA_MARGIN
       ) {
         tlBlockEl.classList.add('animate-up-delay-1');
       }
@@ -32,8 +34,8 @@ const useScrollAnimate = () => {
       Array.from(timelineBoxElements).forEach((tlBoxEl) => {
         const tlBoxRect = tlBoxEl.getBoundingClientRect();
         if (
-          scrollTop + clientHeight
-          >= tlBoxRect.top + scrollTop + tlBoxRect.height - EXTRA_MARGIN
+          scrollTop + clientHeight >=
+          tlBoxRect.top + scrollTop + tlBoxRect.height - EXTRA_MARGIN
         ) {
           tlBoxEl.classList.add('animate-up-delay-1');
         }
@@ -42,8 +44,8 @@ const useScrollAnimate = () => {
       Array.from(projectBoxElements).forEach((projBoxEl) => {
         const projBoxRect = projBoxEl.getBoundingClientRect();
         if (
-          scrollTop + clientHeight
-          >= projBoxRect.top + scrollTop + projBoxRect.height
+          scrollTop + clientHeight >=
+          projBoxRect.top + scrollTop + projBoxRect.height
         ) {
           projBoxEl.classList.add('animate-up-delay-1');
         }
@@ -54,8 +56,8 @@ const useScrollAnimate = () => {
       }
 
       if (
-        scrollTop + clientHeight
-        >= accBlockRect.top + scrollTop + accBlockRect.height
+        scrollTop + clientHeight >=
+        accBlockRect.top + scrollTop + accBlockRect.height
       ) {
         accBlockEl.classList.add('start-animate');
       }

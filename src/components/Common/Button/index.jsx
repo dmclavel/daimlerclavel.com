@@ -3,13 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BUTTON_TYPES from './constants';
 
-function Button({
-  type,
-  onClick,
-  children,
-  id,
-  className,
-}) {
+function Button({ type, onClick, children, id, className }) {
   const identifiers = {};
   if (id.trim().length) identifiers.id = id;
   if (className.trim().length) identifiers.className = className;

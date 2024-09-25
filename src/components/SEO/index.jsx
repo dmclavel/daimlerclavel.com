@@ -19,9 +19,7 @@ const query = graphql`
     }
   }
 `;
-function SEO({
-  title, description, image,
-}) {
+function SEO({ title, description, image }) {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 

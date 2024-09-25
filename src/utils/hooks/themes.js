@@ -28,10 +28,10 @@ const useThemes = () => {
     const localStrgTheme = window.localStorage.getItem('global-theme');
 
     if (!localStrgTheme) {
-      const isDarkThemePreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(
-        isDarkThemePreferred ? 'dark' : 'light',
-      );
+      const isDarkThemePreferred = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      setTheme(isDarkThemePreferred ? 'dark' : 'light');
       if (isDarkThemePreferred) {
         setThemeLayout('dark');
       } else {

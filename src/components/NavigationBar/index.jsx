@@ -1,6 +1,4 @@
-import React, {
-  useState, useEffect, useMemo,
-} from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import useMediaQuery from '../../utils/hooks/mediaQuery';
 import { useGeneralContext } from '../../context/general';
 import Link from '../Common/Link';
@@ -13,7 +11,7 @@ import MoonSvg from '../../svgs/moon.svg';
 function NavigationBar() {
   const [menuOpened, setMenuOpened] = useState(false);
   const [burgerMenuClass, setBurgerMenuClass] = useState(
-    'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0',
+    'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
   );
   const burgerMenuBreakPoint = useMediaQuery('(max-width: 1024px)');
   const { theme, toggleThemeState } = useGeneralContext();
@@ -30,7 +28,7 @@ function NavigationBar() {
       setBurgerMenuClass((prev) => [prev, 'fixed', 'z-20'].join(' '));
     } else {
       setBurgerMenuClass(
-        'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0',
+        'flex lg:hidden w-1/2 justify-end items-center start-slide-right opacity-0'
       );
     }
   }, [menuOpened]);
@@ -63,7 +61,7 @@ function NavigationBar() {
 
   const navLinksCmp = (inMenu = false) => {
     let linkClass = 'flex flex-col start-slide-right opacity-0';
-    const tabIndexValue = (menuOpened || !burgerMenuBreakPoint.matches) ? 0 : -1;
+    const tabIndexValue = menuOpened || !burgerMenuBreakPoint.matches ? 0 : -1;
     const eventProps = menuOpened ? { onClick: handleBurgerMenuClick } : {};
 
     if (inMenu) {
@@ -151,7 +149,7 @@ function NavigationBar() {
           role="switch"
           aria-label="theme-switcher"
           aria-checked={theme === 'dark'}
-          tabIndex={(menuOpened || !burgerMenuBreakPoint.matches) ? 0 : -1}
+          tabIndex={menuOpened || !burgerMenuBreakPoint.matches ? 0 : -1}
           onClick={toggleThemeState}
           onKeyDown={(event) => {
             if (event.key === 'Enter') {
@@ -178,7 +176,7 @@ function NavigationBar() {
         />
       </>
     ),
-    [theme, menuOpened, burgerMenuBreakPoint, toggleThemeState],
+    [theme, menuOpened, burgerMenuBreakPoint, toggleThemeState]
   );
 
   const burgerMenuCmp = (

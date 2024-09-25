@@ -8,7 +8,11 @@ const getFocusableElements = (childElements) => {
         focusableElements.push(childEl);
       }
     } else if (childEl && 'tagName' in childEl) {
-      if (childEl.tagName === 'A' && childEl.href.trim().length > 0 && !childEl.disabled) {
+      if (
+        childEl.tagName === 'A' &&
+        childEl.href.trim().length > 0 &&
+        !childEl.disabled
+      ) {
         focusableElements.push(childEl);
       }
     }

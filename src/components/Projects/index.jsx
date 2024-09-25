@@ -26,8 +26,8 @@ function Projects() {
               clasroom portals. Classroom features include Lectures, Assignments, Realtime
               Chat with Translation feature, Live steam, Calendar and Certificate of
               Completion. This application currently supports English and Italian
-              languages. Application elements ike dates, numbers, etc. are localized based
-              on the language chosen.
+              languages. Application elements like dates, numbers, etc. are localized
+              based on the language chosen.
             </span>
           }
           stack={[
