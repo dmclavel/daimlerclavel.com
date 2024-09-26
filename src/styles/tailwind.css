@@ -22,14 +22,14 @@
 
   .main-link::before,
   .main-link::after {
-    content: "";
+    content: '';
     width: 0;
     height: 2px;
     position: absolute;
     transition: width 400ms;
     background-color: #12805c;
   }
-  
+
   .main-link::before {
     bottom: -2px;
   }

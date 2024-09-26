@@ -20,6 +20,8 @@ import InterviewLightSvg from '../../svgs/interview-light.svg';
 import InterviewDarkSvg from '../../svgs/interview-dark.svg';
 import SoftwareEngineerDarkSvg from '../../svgs/software-engineer-dark.svg';
 import SoftwareEngineerLightSvg from '../../svgs/software-engineer-light.svg';
+import FinanceDarkSvg from '../../svgs/finance-dark.svg';
+import FinanceLightSvg from '../../svgs/finance-light.svg';
 
 function Timeline() {
   const { theme } = useGeneralContext();
@@ -49,7 +51,11 @@ function Timeline() {
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
   const softEngVectorProps = {
-    'aria-labelledby': 'software-engineer',
+    'aria-labelledby': 'software-engineer-vector',
+    className: 'w-36 h-36 md:w-42 md:h-42',
+  };
+  const financeVectorProps = {
+    'aria-labelledby': 'finance-vector',
     className: 'w-36 h-36 md:w-42 md:h-42',
   };
 
@@ -84,7 +90,13 @@ function Timeline() {
         <div id="working-vector">
           This image vector shows a person who is coding on his laptop.
         </div>
-        <div id="software-engineer">This image vector shows a software engineer.</div>
+        <div id="software-engineer-vector">
+          This image vector shows a software engineer.
+        </div>
+        <div id="finance-vector">
+          This image vector shows a person looking at a line and bar graphs from a trading
+          platform.
+        </div>
       </div>
       <TimelineBox
         boxId="timeline-box-1"
@@ -93,7 +105,7 @@ function Timeline() {
                    Graduated with a degree in Bachelor of Science in Computer Science at one of the top universities in the Philippines.
                 `}
         date="2015-2020"
-        headerLink={(
+        headerLink={
           <Link
             href="https://uplb.edu.ph/main/"
             target="_blank"
@@ -104,7 +116,7 @@ function Timeline() {
           >
             University of the Philippines
           </Link>
-        )}
+        }
         svgComponent={
           theme === 'light' ? (
             <BuildingLightSvg {...buildingVectorProps} />
@@ -143,7 +155,7 @@ function Timeline() {
             <WorkingDarkSvg {...internVectorProps} />
           )
         }
-        headerLink={(
+        headerLink={
           <Link
             href="https://questronix.com.ph/"
             target="_blank"
@@ -154,15 +166,15 @@ function Timeline() {
           >
             Questronix Corporation
           </Link>
-        )}
-        footer={(
+        }
+        footer={
           <TechStack
             stack={[
               { name: 'vue', title: 'Vue JS' },
               { name: 'bootstrap', title: 'Bootstrap Vue' },
             ]}
           />
-        )}
+        }
       />
       <TimelineBox
         boxId="timeline-box-4"
@@ -178,7 +190,7 @@ function Timeline() {
             <WorldDarkSvg {...thesisVectorProps} />
           )
         }
-        headerLink={(
+        headerLink={
           <Link
             href="https://www.dropbox.com/s/51jte2exniw5kzc/CMSC190-2_DClavel_journal.pdf?dl=0"
             target="_blank"
@@ -189,10 +201,9 @@ function Timeline() {
           >
             Undergraduate Thesis
           </Link>
-        )}
-        footer={(
+        }
+        footer={
           <>
-            <KeyCombination style={{ marginTop: '1rem' }} />
             <TechStack
               techTerminology="Platforms"
               stack={[
@@ -214,7 +225,7 @@ function Timeline() {
               ]}
             />
           </>
-        )}
+        }
       />
       <TimelineBox
         boxId="timeline-box-5"
@@ -231,7 +242,7 @@ function Timeline() {
             <InterviewDarkSvg {...firstJobVectorProps} />
           )
         }
-        headerLink={(
+        headerLink={
           <Link
             href="https://www.spiralytics.com/"
             target="_blank"
@@ -242,9 +253,10 @@ function Timeline() {
           >
             Spiralytics, Inc.
           </Link>
-        )}
-        footer={(
+        }
+        footer={
           <>
+            <KeyCombination style={{ marginTop: '1rem' }} />
             <TechStack
               techTerminology="Tools"
               stack={[
@@ -261,7 +273,7 @@ function Timeline() {
               ]}
             />
           </>
-        )}
+        }
       />
       <TimelineBox
         boxId="timeline-box-6"
@@ -278,7 +290,7 @@ function Timeline() {
             <DevJobDarkSvg {...devJobVectorProps} />
           )
         }
-        headerLink={(
+        headerLink={
           <Link
             href="https://www.spiralytics.com/"
             target="_blank"
@@ -289,8 +301,8 @@ function Timeline() {
           >
             Spiralytics, Inc.
           </Link>
-        )}
-        footer={(
+        }
+        footer={
           <>
             <TechStack
               techTerminology="Tools"
@@ -313,16 +325,16 @@ function Timeline() {
               ]}
             />
           </>
-        )}
+        }
       />
       <TimelineBox
         boxId="timeline-box-7"
         position="left"
-        fakeLink="#project-box-1-github-link"
+        fakeLink="#timeline-box-8"
         content={`
-          I am currently working as a Front-end engineer who develops components for Samsung Vista - a network analysis, visualization and optimization platform. This software provides anomaly detection, root cause analysis and problem solving to minimize the impact from network troubles and service outages.
+          I worked as a Front-end engineer who developed components for Samsung Vista - a network analysis, visualization and optimization platform. This software provides anomaly detection, root cause analysis and problem solving to minimize the impact from network troubles and service outages.
         `}
-        date="August 2021 - Present"
+        date="August 2021 - October 2023"
         jobTitle="Front-end Engineer"
         svgComponent={
           theme === 'light' ? (
@@ -331,7 +343,7 @@ function Timeline() {
             <SoftwareEngineerDarkSvg {...softEngVectorProps} />
           )
         }
-        headerLink={(
+        headerLink={
           <Link
             href="https://research.samsung.com/srph"
             target="_blank"
@@ -342,8 +354,8 @@ function Timeline() {
           >
             Samsung Research &amp; Development Insitute
           </Link>
-        )}
-        footer={(
+        }
+        footer={
           <>
             <Link
               href="https://www.youtube.com/watch?v=63CW27yukck"
@@ -373,7 +385,71 @@ function Timeline() {
               ]}
             />
           </>
-        )}
+        }
+      />
+      <TimelineBox
+        boxId="timeline-box-8"
+        position="right"
+        fakeLink="#project-box-1-github-link"
+        content={`
+          I specialize in building trading applications that leverage reactive programming principles. My focus on maintainability and performance ensures our applications are not only user-friendly but also reliable and scalable, meeting the demands of the ever-evolving financial landscape.
+        `}
+        date="November 2023 - Present"
+        jobTitle="Senior UI Developer"
+        svgComponent={
+          theme === 'light' ? (
+            <FinanceLightSvg {...financeVectorProps} />
+          ) : (
+            <FinanceDarkSvg {...financeVectorProps} />
+          )
+        }
+        headerLink={
+          <Link
+            href="https://weareadaptive.com/"
+            target="_blank"
+            accessibility={{
+              'aria-label': 'go to adaptive company website',
+            }}
+            className="inline w-fit text-clink text-green dark:text-mint mb-2"
+          >
+            Adaptive Financial Consulting
+          </Link>
+        }
+        footer={
+          <>
+            <KeyCombination style={{ marginTop: '1rem' }} />
+            <Link
+              href="https://rxjs.dev/"
+              target="_blank"
+              accessibility={{
+                'aria-label':
+                  'go to rxjs (reactive extensions library for javascript) website',
+              }}
+              className="inline w-fit text-sm text-green dark:text-mint mt-4"
+            >
+              Reactive Programming with RxJS
+            </Link>
+            <TechStack
+              techTerminology="Tools"
+              stack={[
+                { name: 'git', title: 'Git' },
+                { name: 'visual-studio-code', title: 'Visual Studio Code' },
+              ]}
+            />
+            <TechStack
+              stack={[
+                { name: 'typescript', title: 'TypeScript' },
+                { name: 'rxjs', title: 'RxJS' },
+                { name: 'react-js', title: 'React JS' },
+                { name: 'vite', title: 'Vite' },
+                { name: 'cypress', title: 'Cypress' },
+                { name: 'playwright', title: 'Playwright' },
+                { name: 'jest', title: 'Jest' },
+                { name: 'css-3', title: 'Cascading Style Sheets 3' },
+              ]}
+            />
+          </>
+        }
       />
     </div>
   );

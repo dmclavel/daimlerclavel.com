@@ -19,12 +19,15 @@ function Home() {
   const keyboardCombination = useKeyboardShortcuts();
   const [theme, toggleThemeState] = useThemes();
 
-  const contextValue = useMemo(() => ({
-    theme,
-    showIconText,
-    toggleThemeState,
-    keyboardCombination,
-  }), [theme, showIconText, toggleThemeState, keyboardCombination]);
+  const contextValue = useMemo(
+    () => ({
+      theme,
+      showIconText,
+      toggleThemeState,
+      keyboardCombination,
+    }),
+    [theme, showIconText, toggleThemeState, keyboardCombination]
+  );
 
   useEffect(() => {
     if (keyboardCombination === 'show-icon-text') {

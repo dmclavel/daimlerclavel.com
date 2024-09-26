@@ -30,9 +30,9 @@ function ContactSection() {
         <div className="text-center w-3/4 lg:w-1/2">
           <span className="font-sans text-sm lg:text-base dark:text-white-emphasis transition ease-linear duration-300 delay-200 opacity-0">
             You can contact me on any of my work or social media accounts below. I am
-            currently not looking for new opportunities but you can just say hi and let&apos;s
-            talk about the latest web dev trend or message me if you want to collaborate
-            for a cool side project!
+            currently not looking for new opportunities but you can just say hi and
+            let&apos;s talk about the latest web dev trend or message me if you want to
+            collaborate for a cool side project!
           </span>
           <nav className="flex justify-center social-block my-4">
             <div title="Linkedin">

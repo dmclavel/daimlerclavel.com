@@ -45,19 +45,13 @@ Link.propTypes = {
   target: PropTypes.oneOf(ANCHOR_TARGET_VALUES),
   referrerPolicy: PropTypes.oneOf(ANCHOR_REFERRER_POLICY_VALUES),
   className: PropTypes.string,
-  onClick: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.func,
-  ]),
+  onClick: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   accessibility: PropTypes.shape({
-    tabIndex: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string,
-    ]),
+    tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     title: PropTypes.string,
     'aria-label': PropTypes.string,
     'aria-labelledby': PropTypes.string,
-  }),
+  }).isRequired,
   children: PropTypes.node.isRequired,
 };
 

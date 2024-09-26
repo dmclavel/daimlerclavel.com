@@ -13,12 +13,7 @@ const ANCHOR_REFERRER_POLICY_VALUES = [
 
 const ANCHOR_TARGET_DEF_IDX = 0;
 
-const ANCHOR_TARGET_VALUES = [
-  '_self',
-  '_blank',
-  '_parent',
-  '_top',
-];
+const ANCHOR_TARGET_VALUES = ['_self', '_blank', '_parent', '_top'];
 
 export {
   ANCHOR_REFERRER_POLICY_DEF_IDX,

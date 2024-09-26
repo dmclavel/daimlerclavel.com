@@ -20,7 +20,9 @@ function ProjectBox({
 
   useEffect(() => {
     const projectBoxContainerEl = document.getElementById(boxId);
-    const svgTooltipsContainerEl = document.querySelector(`section#${boxId} .svg-tooltips`);
+    const svgTooltipsContainerEl = document.querySelector(
+      `section#${boxId} .svg-tooltips`
+    );
 
     if (svgTooltipsContainerEl !== null && projectBoxContainerEl !== null) {
       if (isWebsiteLinkFocused || isGithubLinkFocused || isTitleLinkFocused) {
@@ -62,13 +64,8 @@ function ProjectBox({
       <footer className="font-sans mt-4">
         <ul className="flex flex-wrap list-inside text-black dark:text-mint">
           {stack.map((lib) => (
-            <li
-              key={`${lib}-${boxId}`}
-              className="text-sm mr-3 content-before"
-            >
-              ※
-              {' '}
-              {lib}
+            <li key={`${lib}-${boxId}`} className="text-sm mr-3 content-before">
+              ※ {lib}
             </li>
           ))}
         </ul>

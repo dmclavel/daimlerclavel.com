@@ -8,7 +8,7 @@ const gatsbyRequiredRules = path.join(
   'gatsby',
   'dist',
   'utils',
-  'eslint-rules',
+  'eslint-rules'
 );
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
     siteUrl: 'https://daimlerclavel.com',
     contentType: 'website',
     image: 'https://daimlerclavel.com/upgrad.png',
-    twitterTitle: 'A Frontend Engineer\'s Portfolio',
+    twitterTitle: "A Frontend Engineer's Portfolio",
     twitterUsername: '@daimlerclavel',
   },
   plugins: [
