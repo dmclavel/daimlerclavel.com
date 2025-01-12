@@ -21,8 +21,8 @@ module.exports = {
     siteUrl: 'https://daimlerclavel.com',
     contentType: 'website',
     image: 'https://daimlerclavel.com/upgrad.png',
-    twitterTitle: "A Frontend Engineer's Portfolio",
-    twitterUsername: '@daimlerclavel',
+    twitterTitle: "Daimler Clavel's Portfolio, Frontend Engineer",
+    twitterUsername: '@dammmiann18',
   },
   plugins: [
     'gatsby-plugin-postcss',

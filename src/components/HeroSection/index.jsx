@@ -49,13 +49,13 @@ function HeroSection() {
         style={{ animationDelay: isBreakpoint.matches ? '800ms' : '1600ms' }}
         className="opacity-0 text-base text-black dark:text-white-emphasis lg:text-lg animate-up"
       >
-        Data Analyst
+        Accessibility Advocate
       </h3>
       <h3
         style={{ animationDelay: isBreakpoint.matches ? '900ms' : '1600ms' }}
         className="opacity-0 text-base text-black dark:text-white-emphasis lg:text-lg animate-up"
       >
-        CRO Practitioner
+        Localization Professional
       </h3>
       <div
         style={{

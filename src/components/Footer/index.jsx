@@ -19,11 +19,12 @@ function Footer() {
             stackName="tailwindcss"
             title="Tailwind CSS"
             overrideClass="w-6 h-6 lg:w-8 lg:h-8"
+            isLast={true}
           />
         </div>
         <h2 className="text-base dark:text-white tracking-wider mt-6">
           <span className="text-green dark:text-mint-light">Daimler Clavel</span> &#169;
-          2024
+          2025
         </h2>
       </div>
     </footer>
