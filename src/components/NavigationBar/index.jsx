@@ -188,7 +188,7 @@ function NavigationBar() {
         This will close the burger menu.
       </span>
       <div
-        aria-describedby={`burger-menu-description-${menuOpened ? 'close' : 'open'}`}
+        aria-details={`burger-menu-description-${menuOpened ? 'close' : 'open'}`}
         role="menu"
         className="cursor-pointer"
         tabIndex={0}
